@@ -2,7 +2,7 @@
 
 **Kshitij Raut** is a Cybersecurity Analyst dedicated to closing the gap between **Red Team offensive tactics** and **Blue Team defensive operations**. Currently operating at **TCS**, Kshitij specializes in SOC operations, high-fidelity threat hunting, and the automation of security workflows.
 
-With a background spanning **Digital Forensics** and **Adversary Emulation**, his approach to security is rooted in the "Assume Breach" mentality—building resilient infrastructure that doesn't just block threats but actively hunts them.
+With a background spanning **Digital Forensics** and **Adversary Emulation**, his approach to security is rooted in the "Assume Breach" mentality building resilient infrastructure that doesn't just block threats but actively hunts them.
 
 ### Specializations
 
