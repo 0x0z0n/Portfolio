@@ -1,146 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kshitij Raut | Portfolio</title>
-    <link rel="icon" type="image/png" href="assets/tab.png" />
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Kshitij Raut | Portfolio</title>
+      <link rel="icon" type="image/png" href="assets/tab.png" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Inter:wght@300;400;600;700;800&display=swap"
+         rel="stylesheet"
+      />
 
-    <style>
-        /* --- VARIABLES & RESET --- */
-        :root {
+      <link
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+         rel="stylesheet"
+      />
+
+      <link
+         rel="stylesheet"
+         href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+      />
+
+      <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+      />
+
+      <style>
+         /* --- VARIABLES & RESET --- */
+         :root {
             --bg-dark: #0a192f;
             --bg-light: #112240;
             --text-main: #ccd6f6;
             --text-muted: #8892b0;
             --accent: #64ffda;
             --accent-tint: rgba(100, 255, 218, 0.1);
-            --font-main: 'Inter', sans-serif;
-            --font-mono: 'Fira Code', monospace;
+            --font-main: "Inter", sans-serif;
+            --font-mono: "Fira Code", monospace;
             --trans: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
+         }
 
-        body {
+         body {
             background-color: var(--bg-dark);
             color: var(--text-main);
             font-family: var(--font-main);
             line-height: 1.6;
             overflow-x: hidden;
-        }
+         }
 
-        /* --- TYPOGRAPHY --- */
-        h1, h2, h3, h4, h5 {
+         /* --- TYPOGRAPHY --- */
+         h1,
+         h2,
+         h3,
+         h4,
+         h5 {
             color: #e6f1ff;
             font-weight: 700;
             margin: 0 0 20px 0;
-        }
+         }
 
-        .mono-heading {
+         .mono-heading {
             font-family: var(--font-mono);
             color: var(--accent);
             font-size: 14px;
             font-weight: 400;
             margin-bottom: 20px;
-        }
+         }
 
-        .section-title {
+         .section-title {
             display: flex;
             align-items: center;
-            font-size: 26px; 
+            font-size: 26px;
             white-space: nowrap;
             margin-bottom: 40px;
             color: #e6f1ff;
-        }
+         }
 
-        .section-title::after {
+         .section-title::after {
             content: "";
             display: block;
             width: 300px;
             height: 1px;
             background-color: #233554;
             margin-left: 20px;
-        }
+         }
 
-        a {
+         a {
             text-decoration: none;
             color: var(--accent);
             transition: var(--trans);
             display: inline-block;
             position: relative;
-        }
+         }
 
-        /* --- NAVBAR --- */
-        .navbar {
+         /* --- NAVBAR --- */
+         .navbar {
             background-color: rgba(10, 25, 47, 0.85);
             backdrop-filter: blur(10px);
             padding: 20px 50px;
             transition: var(--trans);
             box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
-        }
+         }
 
-        .navbar-brand {
+         .navbar-brand {
             font-family: var(--font-mono);
             color: var(--accent) !important;
             font-weight: 700;
             border: 1px solid var(--accent);
             padding: 5px 10px;
             border-radius: 4px;
-        }
+         }
 
-        .nav-link {
+         .nav-link {
             font-family: var(--font-mono);
             font-size: 13px;
             color: var(--text-main) !important;
             margin-left: 20px;
-        }
+         }
 
-        .nav-link:hover { color: var(--accent) !important; }
+         .nav-link:hover {
+            color: var(--accent) !important;
+         }
 
-        /* --- HERO SECTION --- */
-        .hero {
+         /* --- HERO SECTION --- */
+         .hero {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            padding: 0 150px; 
+            padding: 0 150px;
             max-width: 1200px;
             margin: 0 auto;
-        }
+         }
 
-        .hero h1 {
+         .hero h1 {
             color: var(--accent);
             font-family: var(--font-mono);
             font-size: 16px;
             font-weight: 400;
             margin-bottom: 30px;
-        }
+         }
 
-        .hero h2 {
+         .hero h2 {
             font-size: clamp(40px, 8vw, 80px);
             line-height: 1.1;
             margin: 0;
             color: #e6f1ff;
-        }
+         }
 
-        /* --- HEARTBEAT ANIMATION --- */
-        @keyframes heartbeat {
-            0% { opacity: 1; transform: scale(1); text-shadow: 0 0 0 rgba(100, 255, 218, 0); }
-            50% { opacity: 0.7; transform: scale(0.98); text-shadow: 0 0 10px rgba(100, 255, 218, 0.3); }
-            100% { opacity: 1; transform: scale(1); text-shadow: 0 0 0 rgba(100, 255, 218, 0); }
-        }
+         /* --- HEARTBEAT ANIMATION --- */
+         @keyframes heartbeat {
+            0% {
+               opacity: 1;
+               transform: scale(1);
+               text-shadow: 0 0 0 rgba(100, 255, 218, 0);
+            }
+            50% {
+               opacity: 0.7;
+               transform: scale(0.98);
+               text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+            }
+            100% {
+               opacity: 1;
+               transform: scale(1);
+               text-shadow: 0 0 0 rgba(100, 255, 218, 0);
+            }
+         }
 
-        .alias-heartbeat {
+         .alias-heartbeat {
             font-family: var(--font-mono);
             color: var(--accent);
             font-size: 0.5em; /* Scale relative to the big H2 */
@@ -148,138 +178,139 @@
             vertical-align: middle;
             display: inline-block;
             animation: heartbeat 2s infinite ease-in-out;
-        }
+         }
 
-        .hero h3 {
-            font-size: clamp(30px, 6vw, 60px); 
+         .hero h3 {
+            font-size: clamp(30px, 6vw, 60px);
             line-height: 1.1;
             color: var(--text-muted);
             margin-top: 10px;
-        }
+         }
 
-        .hero p {
+         .hero p {
             margin-top: 20px;
             max-width: 540px;
             font-size: 18px;
             color: var(--text-muted);
-        }
+         }
 
-        .btn-outline {
+         .btn-outline {
             color: var(--accent);
             background-color: transparent;
             border: 1px solid var(--accent);
             border-radius: 4px;
-            padding: 18px 25px; 
+            padding: 18px 25px;
             font-family: var(--font-mono);
             font-size: 14px;
             margin-top: 50px;
             cursor: pointer;
             text-decoration: none;
             transition: var(--trans);
-        }
+         }
 
-        .btn-outline:hover {
+         .btn-outline:hover {
             background-color: var(--accent-tint);
-        }
+         }
 
-        /* --- SOCIAL SIDEBAR --- */
-        .social-sidebar {
+         /* --- SOCIAL SIDEBAR --- */
+         .social-sidebar {
             position: fixed;
             bottom: 0;
             left: 40px;
             width: 40px;
             z-index: 10;
-        }
+         }
 
-        .social-sidebar ul {
+         .social-sidebar ul {
             display: flex;
             flex-direction: column;
             align-items: center;
             list-style: none;
             padding: 0;
             margin: 0;
-        }
+         }
 
-        .social-sidebar ul::after {
+         .social-sidebar ul::after {
             content: "";
             display: block;
             width: 1px;
             height: 90px;
             margin: 0 auto;
             background-color: var(--text-muted);
-        }
+         }
 
-        .social-sidebar li { margin-bottom: 20px; }
+         .social-sidebar li {
+            margin-bottom: 20px;
+         }
 
-        .social-sidebar a {
+         .social-sidebar a {
             color: var(--text-muted);
             font-size: 20px;
             transition: var(--trans);
-        }
+         }
 
-        .social-sidebar a:hover {
+         .social-sidebar a:hover {
             color: var(--accent);
             transform: translateY(-3px);
-        }
+         }
 
-        /* --- EMAIL SIDEBAR --- */
-        .email-sidebar {
+         /* --- EMAIL SIDEBAR --- */
+         .email-sidebar {
             position: fixed;
             bottom: 0;
             right: 40px;
             width: 40px;
             z-index: 10;
-        }
+         }
 
-        .email-sidebar div {
+         .email-sidebar div {
             display: flex;
             flex-direction: column;
             align-items: center;
             position: relative;
-        }
+         }
 
-        .email-sidebar a {
+         .email-sidebar a {
             font-family: var(--font-mono);
             font-size: 12px;
             letter-spacing: 0.1em;
             writing-mode: vertical-rl;
             color: var(--text-muted);
             margin-bottom: 20px;
-        }
-        
-        .email-sidebar a:hover {
+         }
+
+         .email-sidebar a:hover {
             color: var(--accent);
             transform: translateY(-3px);
-        }
+         }
 
-        .email-sidebar::after {
+         .email-sidebar::after {
             content: "";
             display: block;
             width: 1px;
             height: 90px;
             margin: 0 auto;
             background-color: var(--text-muted);
-        }
+         }
 
-
-        /* --- SECTIONS GENERAL --- */
-        section {
+         /* --- SECTIONS GENERAL --- */
+         section {
             padding: 100px 0;
             max-width: 1000px;
             margin: 0 auto;
-        }
+         }
 
-        /* --- ABOUT --- */
-        .about-inner {
+         /* --- ABOUT --- */
+         .about-inner {
             display: grid;
             grid-template-columns: 3fr 2fr;
             gap: 50px;
-        }
-        
-        /* --------------------------------------------------------- */
-        /* MODIFIED: Skills Grid Layout                              */
-        /* --------------------------------------------------------- */
-        .skills-list {
+         }
+
+         /* --------------------------------------------------------- */
+         /* MODIFIED: Skills Grid Layout                              */
+         /* --------------------------------------------------------- */
+         .skills-list {
             display: grid;
             /* Force exactly two columns */
             grid-template-columns: 1fr 1fr;
@@ -289,43 +320,43 @@
             margin: 20px 0 0 0;
             overflow: hidden;
             list-style: none;
-        }
+         }
 
-        /* Span the first item ("Code") across both columns */
-        .skills-list li:first-child {
-            grid-column: 1 / -1; 
+         /* Span the first item ("Code") across both columns */
+         .skills-list li:first-child {
+            grid-column: 1 / -1;
             margin-bottom: 5px; /* Optional: add a little breathing room below the top item */
-        }
+         }
 
-        .skills-list li {
+         .skills-list li {
             position: relative;
             /* margin-bottom: 10px;  <-- Removed margin to let 'gap' handle spacing */
             padding-left: 20px;
             font-family: var(--font-mono);
             font-size: 13px;
-        }
+         }
 
-        .skills-list li::before {
+         .skills-list li::before {
             content: "▹";
             position: absolute;
             left: 0;
             color: var(--accent);
-        }
-        /* --------------------------------------------------------- */
+         }
+         /* --------------------------------------------------------- */
 
-        /* --- EXPERIENCE (Timeline) --- */
-        .job-tabs {
+         /* --- EXPERIENCE (Timeline) --- */
+         .job-tabs {
             border-left: 2px solid #233554;
             margin-left: 20px;
             padding-left: 20px;
-        }
+         }
 
-        .job-card {
+         .job-card {
             position: relative;
             margin-bottom: 40px;
-        }
+         }
 
-        .job-card::before {
+         .job-card::before {
             content: "";
             position: absolute;
             left: -27px;
@@ -336,49 +367,56 @@
             background: var(--bg-dark);
             border: 2px solid var(--accent);
             transition: var(--trans);
-        }
+         }
 
-        .job-card:hover::before { background: var(--accent); }
+         .job-card:hover::before {
+            background: var(--accent);
+         }
 
-        .job-card h3 { margin-bottom: 5px; font-size: 20px; }
-        
-        .job-card .company { color: var(--accent); }
+         .job-card h3 {
+            margin-bottom: 5px;
+            font-size: 20px;
+         }
 
-        .job-card .range {
+         .job-card .company {
+            color: var(--accent);
+         }
+
+         .job-card .range {
             font-family: var(--font-mono);
             font-size: 13px;
             color: var(--text-muted);
             margin-bottom: 20px;
             display: block;
-        }
+         }
 
-        .job-card ul {
+         .job-card ul {
             list-style: none;
             padding: 0;
-        }
+         }
 
-        .job-card li {
+         .job-card li {
             position: relative;
             padding-left: 30px;
             margin-bottom: 10px;
             font-size: 15px;
-        }
+         }
 
-        .job-card li::before {
+         .job-card li::before {
             content: "▹";
             position: absolute;
             left: 0;
             color: var(--accent);
-        }
+         }
 
-        /* --- PROJECTS --- */
-        .project-grid {
+         /* --- PROJECTS --- */
+         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 15px;
-        }
+         }
 
-        .project-card {
+         .project-card {
             background-color: var(--bg-light);
             padding: 2rem 1.75rem;
             border-radius: 4px;
@@ -386,26 +424,40 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-        }
+         }
 
-        .project-card:hover {
+         .project-card:hover {
             transform: translateY(-7px);
-        }
+         }
 
-        .project-top {
+         .project-top {
             display: flex;
             justify-content: space-between;
             margin-bottom: 30px;
-        }
+         }
 
-        .folder-icon { color: var(--accent); font-size: 40px; }
-        .project-links a { color: var(--text-main); margin-left: 10px; }
-        .project-links a:hover { color: var(--accent); }
+         .folder-icon {
+            color: var(--accent);
+            font-size: 40px;
+         }
+         .project-links a {
+            color: var(--text-main);
+            margin-left: 10px;
+         }
+         .project-links a:hover {
+            color: var(--accent);
+         }
 
-        .project-card h3 { color: #e6f1ff; font-size: 22px; }
-        .project-card p { font-size: 15px; flex-grow: 1; }
-        
-        .project-tech-list {
+         .project-card h3 {
+            color: #e6f1ff;
+            font-size: 22px;
+         }
+         .project-card p {
+            font-size: 15px;
+            flex-grow: 1;
+         }
+
+         .project-tech-list {
             display: flex;
             flex-wrap: wrap;
             list-style: none;
@@ -414,29 +466,31 @@
             font-family: var(--font-mono);
             font-size: 12px;
             color: var(--text-muted);
-        }
-        
-        .project-tech-list li { margin-right: 15px; }
+         }
 
-        /* --- CERTIFICATIONS (SWIPER) --- */
-        .swiper {
+         .project-tech-list li {
+            margin-right: 15px;
+         }
+
+         /* --- CERTIFICATIONS (SWIPER) --- */
+         .swiper {
             width: 100%;
             padding-top: 50px;
             padding-bottom: 50px;
-        }
+         }
 
-        .swiper-slide {
+         .swiper-slide {
             background-position: center;
             background-size: cover;
             width: 300px;
-            height: auto; 
+            height: auto;
             background-color: var(--bg-light);
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
-        }
+         }
 
-        .cert-img-wrapper {
+         .cert-img-wrapper {
             width: 100%;
             height: 200px;
             background: #000;
@@ -444,31 +498,40 @@
             align-items: center;
             justify-content: center;
             border-bottom: 1px solid #233554;
-        }
+         }
 
-        .cert-img-wrapper img {
+         .cert-img-wrapper img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
-        }
+         }
 
-        .cert-info {
+         .cert-info {
             padding: 20px;
             text-align: center;
-        }
-        
-        .cert-info h5 { font-size: 18px; margin-bottom: 5px; color: #e6f1ff; }
-        .cert-info p { font-size: 14px; color: var(--accent); font-family: var(--font-mono); margin: 0; }
+         }
 
-        /* --- SKILLS PILLS --- */
-        #skillsList {
+         .cert-info h5 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #e6f1ff;
+         }
+         .cert-info p {
+            font-size: 14px;
+            color: var(--accent);
+            font-family: var(--font-mono);
+            margin: 0;
+         }
+
+         /* --- SKILLS PILLS --- */
+         #skillsList {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
-        }
-        
-        .skill-pill {
+         }
+
+         .skill-pill {
             border: 1px solid var(--accent);
             color: var(--accent);
             border-radius: 50px;
@@ -477,415 +540,614 @@
             font-size: 12px;
             transition: var(--trans);
             text-decoration: none;
-        }
+         }
 
-        .skill-pill:hover {
+         .skill-pill:hover {
             background-color: var(--accent-tint);
-        }
+         }
 
-        /* --- RESPONSIVE --- */
-        @media (max-width: 1080px) {
-            .hero { padding: 0 100px; }
-        }
+         /* --- RESPONSIVE --- */
+         @media (max-width: 1080px) {
+            .hero {
+               padding: 0 100px;
+            }
+         }
 
-        @media (max-width: 768px) {
-            .hero { padding: 0 50px; }
-            .section { padding: 80px 20px; }
-            .about-inner { display: block; }
-            .about-text { margin-bottom: 40px; }
-            .social-sidebar, .email-sidebar { display: none; } 
-            .navbar { padding: 20px; }
-        }
-    </style>
-</head>
-<body>
-
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid">
+         @media (max-width: 768px) {
+            .hero {
+               padding: 0 50px;
+            }
+            .section {
+               padding: 80px 20px;
+            }
+            .about-inner {
+               display: block;
+            }
+            .about-text {
+               margin-bottom: 40px;
+            }
+            .social-sidebar,
+            .email-sidebar {
+               display: none;
+            }
+            .navbar {
+               padding: 20px;
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-lg fixed-top">
+         <div class="container-fluid">
             <a class="navbar-brand" href="#">0x0z0n</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="fa fa-bars" style="color: var(--accent);"></span>
+            <button
+               class="navbar-toggler"
+               type="button"
+               data-bs-toggle="collapse"
+               data-bs-target="#navbarNav"
+            >
+               <span class="fa fa-bars" style="color: var(--accent)"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#certifications">Certs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills-cloud">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://0x0z0n.github.io/Research/" target="_blank">Research</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <li class="nav-item"><a class="btn-outline ms-3" href="assets/Kshitij_Raut.html" target="_blank" style="padding: 8px 16px; margin-top:0;">Resume</a></li>
-                </ul>
+            <div
+               class="collapse navbar-collapse justify-content-end"
+               id="navbarNav"
+            >
+               <ul class="navbar-nav">
+                  <li class="nav-item">
+                     <a class="nav-link" href="#about">About</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#experience">Experience</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#projects">Projects</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#certifications">Certs</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#skills-cloud">Skills</a>
+                  </li>
+                  <li class="nav-item">
+                     <a
+                        class="nav-link"
+                        href="https://0x0z0n.github.io/Research/"
+                        target="_blank"
+                        >Research</a
+                     >
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#contact">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                     <a
+                        class="btn-outline ms-3"
+                        href="assets/Kshitij_Raut.html"
+                        target="_blank"
+                        style="padding: 8px 16px; margin-top: 0"
+                        >Resume</a
+                     >
+                  </li>
+               </ul>
             </div>
-        </div>
-    </nav>
+         </div>
+      </nav>
 
-    <div class="social-sidebar">
-        <ul>
-            <li><a href="https://github.com/0x0z0n" target="_blank"><i class="fa-brands fa-github"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/kshitijnraut/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
-            <li><a href="https://tryhackme.com/p/0x0z0n" target="_blank"><i class="fa-solid fa-terminal"></i></a></li>
-            <li><a href="https://app.hackthebox.com/public/users/1761906" target="_blank"><i class="fa-solid fa-cube"></i></a></li>
-            <li><a href="https://0x0z0n.github.io/Research/" target="_blank"><i class="fa-solid fa-book"></i></a></li>
-        </ul>
-    </div>
+      <div class="social-sidebar">
+         <ul>
+            <li>
+               <a href="https://github.com/0x0z0n" target="_blank"
+                  ><i class="fa-brands fa-github"></i
+               ></a>
+            </li>
+            <li>
+               <a
+                  href="https://www.linkedin.com/in/kshitijnraut/"
+                  target="_blank"
+                  ><i class="fa-brands fa-linkedin"></i
+               ></a>
+            </li>
+            <li>
+               <a href="https://tryhackme.com/p/0x0z0n" target="_blank"
+                  ><i class="fa-solid fa-terminal"></i
+               ></a>
+            </li>
+            <li>
+               <a
+                  href="https://app.hackthebox.com/public/users/1761906"
+                  target="_blank"
+                  ><i class="fa-solid fa-cube"></i
+               ></a>
+            </li>
+            <li>
+               <a href="https://0x0z0n.github.io/Research/" target="_blank"
+                  ><i class="fa-solid fa-book"></i
+               ></a>
+            </li>
+         </ul>
+      </div>
 
-    <div class="email-sidebar">
-        <div>
-            <a href="mailto:kshitijraut360@gmail.com">kshitijraut360@gmail.com</a>
-        </div>
-    </div>
+      <div class="email-sidebar">
+         <div>
+            <a href="mailto:kshitijraut360@gmail.com"
+               >kshitijraut360@gmail.com</a
+            >
+         </div>
+      </div>
 
-    <section class="hero">
-        <h1>Hello, World! I am</h1>
-        <h2>Kshitij Raut. <span class="alias-heartbeat">(0x0z0n)</span></h2>
-        <h3>Bridging Offensive Security & OPSec.</h3>
-        <p>
-            Security Analyst specializing in SOC Operations, Incident Response, and VAPT. 
-            Focused on improving security posture through automated threat detection and adversary simulation.
-        </p>
-        <a href="#projects" class="btn-outline">View Projects</a>
-    </section>
+      <section class="hero">
+         <h1>Hello, World! I am</h1>
+         <h2>Kshitij Raut. <span class="alias-heartbeat">(0x0z0n)</span></h2>
+         <h3>Bridging Offensive Security & OPSec.</h3>
+         <p>
+            Security Analyst specializing in SOC Operations, Incident Response,
+            and VAPT. Focused on improving security posture through automated
+            threat detection and adversary simulation.
+         </p>
+         <a href="#projects" class="btn-outline">View Projects</a>
+      </section>
 
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-inner">
+      <section id="about">
+         <h2 class="section-title">About Me</h2>
+         <div class="about-inner">
             <div class="about-text">
-                <p>
-                    Securing enterprise infrastructure, My journey in cybersecurity began with curiosity about network protocols, leading me to specialize in <span style="color: var(--accent);">Threat Hunting</span> and <span style="color: var(--accent);">Vulnerability Assessment</span>.
-                </p>
-                <p>
-                    Currently, I leverage my experience at <a href="#">TCS</a> to close the loop between <span style="color: var(--accent);">Red Team engagements</span> and <span style="color: var(--accent);">Blue Team defense</span>.
-                </p>
-                <p>Here are the core technologies I work with:</p>
-                <ul class="skills-list">
-                    <li>Code (Python/Bash/Assembly/js/C/Rust)</li>
-                    <li>SIEM (Splunk/Chronicle/Sentinel)</li>
-                    <li>XDR (Sentinel One/Defender/Cortex)</li>
-                    <li>AppSec (Burpsuite & etc)</li>
-                    <li>DevSecOps (Docker/Kubernetes)</li>
-                    <li>Cloud (Azure/AWS)</li>
-                    <li>Infra (Networks/AD)</li>
-                    <li>Adversary Emulation (C&C Servers)</li>
-                </ul>
+               <p>
+                  Securing enterprise infrastructure, My journey in
+                  cybersecurity began with curiosity about network protocols,
+                  leading me to specialize in
+                  <span style="color: var(--accent)">Threat Hunting</span> and
+                  <span style="color: var(--accent)"
+                     >Vulnerability Assessment</span
+                  >.
+               </p>
+               <p>
+                  Currently, I leverage my experience at <a href="#">TCS</a> to
+                  close the loop between
+                  <span style="color: var(--accent)">Red Team engagements</span>
+                  and
+                  <span style="color: var(--accent)">Blue Team defense</span>.
+               </p>
+               <p>Here are the core technologies I work with:</p>
+               <ul class="skills-list">
+                  <li>Code (Python/Bash/Assembly/js/C/Rust)</li>
+                  <li>SIEM (Splunk/Chronicle/Sentinel)</li>
+                  <li>XDR (Sentinel One/Defender/Cortex)</li>
+                  <li>AppSec (Burpsuite & etc)</li>
+                  <li>DevSecOps (Docker/Kubernetes)</li>
+                  <li>Cloud (Azure/AWS)</li>
+                  <li>Infra (Networks/AD)</li>
+                  <li>Adversary Emulation (C&C Servers)</li>
+               </ul>
             </div>
             <div class="about-img">
-                <div class="project-card" style="height: auto; text-align: center;">
-                    <i class="fa-solid fa-user-shield" style="font-size: 80px; color: var(--accent); margin: 20px 0;"></i>
-                    <p style="font-family: var(--font-mono); color: var(--accent);">Status: Active Defense</p>
-                </div>
+               <div
+                  class="project-card"
+                  style="height: auto; text-align: center"
+               >
+                  <i
+                     class="fa-solid fa-user-shield"
+                     style="
+                        font-size: 80px;
+                        color: var(--accent);
+                        margin: 20px 0;
+                     "
+                  ></i>
+                  <p
+                     style="font-family: var(--font-mono); color: var(--accent)"
+                  >
+                     Status: Active Defense
+                  </p>
+               </div>
             </div>
-        </div>
-    </section>
+         </div>
+      </section>
 
-    <section id="experience">
-        <h2 class="section-title">Experience</h2>
-        <div class="job-tabs">
-            
+      <section id="experience">
+         <h2 class="section-title">Experience</h2>
+         <div class="job-tabs">
             <div class="job-card">
-                <h3>Cybersecurity Analyst <span class="company">@ TCS</span></h3>
-                <span class="range">March 2024 - Present</span>
-                <ul>
-                    <li>Orchestrated L1/L2 triage operations using SIEM/XDR to ensure strict SLA compliance during critical incidents.</li>
-                    <li>Investigate triaged 50+ security alerts weekly using SIEM and XDR tools, reducing false positives by 20%.</li>
-                    <li>Conducted forensic analysis to identify root causes and mitigate advanced persistent threats.</li>
-                    <li>Performed vulnerability assessments and validated remediation, improving compliance by 15%.</li>
-                    <li>Executed penetration testing engagements and developed custom payloads for red teaming.</li>
-                    <li>Prepared detailed incident reports and collaborated with IT/DevOps teams to strengthen security posture.</li>
-                </ul>
+               <h3>Cybersecurity Analyst <span class="company">@ TCS</span></h3>
+               <span class="range">March 2024 - Present</span>
+               <ul>
+                  <li>
+                     Orchestrated L1/L2 triage operations using SIEM/XDR to
+                     ensure strict SLA compliance during critical incidents.
+                  </li>
+                  <li>
+                     Investigate triaged 50+ security alerts weekly using SIEM
+                     and XDR tools, reducing false positives by 20%.
+                  </li>
+                  <li>
+                     Conducted forensic analysis to identify root causes and
+                     mitigate advanced persistent threats.
+                  </li>
+                  <li>
+                     Performed vulnerability assessments and validated
+                     remediation, improving compliance by 15%.
+                  </li>
+                  <li>
+                     Executed penetration testing engagements and developed
+                     custom payloads for red teaming.
+                  </li>
+                  <li>
+                     Prepared detailed incident reports and collaborated with
+                     IT/DevOps teams to strengthen security posture.
+                  </li>
+               </ul>
             </div>
 
             <div class="job-card">
-                <h3>Cybersecurity & Digital Forensics Intern <span class="company">@ Cyber Secured India</span></h3>
-                <span class="range">Dec 2023 – Mar 2024</span>
-                <ul>
-                    <li>Completed 36+ hrs/week of hands-on cybersecurity and forensics training.</li>
-                    <li>Worked on live projects including malware analysis and log investigations.</li>
-                    <li>Performed evidence collection and forensic reporting for investigations.</li>
-                    <li>Delivered weekly assignments and collaborated on project-based learning tasks.</li>
-                </ul>
+               <h3>
+                  Cybersecurity & Digital Forensics Intern
+                  <span class="company">@ Cyber Secured India</span>
+               </h3>
+               <span class="range">Dec 2023 – Mar 2024</span>
+               <ul>
+                  <li>
+                     Completed 36+ hrs/week of hands-on cybersecurity and
+                     forensics training.
+                  </li>
+                  <li>
+                     Worked on live projects including malware analysis and log
+                     investigations.
+                  </li>
+                  <li>
+                     Performed evidence collection and forensic reporting for
+                     investigations.
+                  </li>
+                  <li>
+                     Delivered weekly assignments and collaborated on
+                     project-based learning tasks.
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </section>
+
+      <section id="projects">
+         <h2 class="section-title">Projects</h2>
+         <div class="project-grid">
+            <div class="project-card">
+               <div class="project-top">
+                  <i class="fa-regular fa-folder folder-icon"></i>
+                  <div class="project-links">
+                     <a
+                        href="https://github.com/0x0z0n/CropVision"
+                        target="_blank"
+                        ><i class="fa-brands fa-github"></i
+                     ></a>
+                     <a
+                        href="https://0x0z0n.github.io/CropVision/templates/"
+                        target="_blank"
+                        ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                     ></a>
+                     <a
+                        href="https://drive.google.com/file/d/16LyoDLcKa0dHhaDAt3ljQvsNEtKTzfR8/view"
+                        target="_blank"
+                        ><i class="fa-solid fa-copyright"></i
+                     ></a>
+                     <a
+                        href="https://0x0z0n.github.io/Research/posts/CropVision/"
+                        target="_blank"
+                        ><i class="fa-solid fa-book"></i
+                     ></a>
+                  </div>
+               </div>
+               <h3>CropVision AI</h3>
+               <p>
+                  A computer vision application utilizing CNNs to detect
+                  agricultural anomalies with 87.0% accuracy. Demonstrates
+                  proficiency in AI/ML integration.
+               </p>
+               <ul class="project-tech-list">
+                  <li>Python</li>
+                  <li>TensorFlow</li>
+                  <li>CNN</li>
+                  <li>Flask</li>
+               </ul>
             </div>
 
-        </div>
-    </section>
-
-    <section id="projects">
-    <h2 class="section-title">Projects</h2>
-    <div class="project-grid">
-        
-        <div class="project-card">
-            <div class="project-top">
-                <i class="fa-regular fa-folder folder-icon"></i>
-                <div class="project-links">
-                    <a href="https://github.com/0x0z0n/CropVision" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://0x0z0n.github.io/CropVision/templates/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    <a href="https://drive.google.com/file/d/16LyoDLcKa0dHhaDAt3ljQvsNEtKTzfR8/view" target="_blank"><i class="fa-solid fa-copyright"></i></a>
-                    <a href="https://0x0z0n.github.io/Research/posts/CropVision/" target="_blank"><i class="fa-solid fa-book"></i></a>
-                </div>
+            <div class="project-card">
+               <div class="project-top">
+                  <i class="fa-regular fa-folder folder-icon"></i>
+                  <div class="project-links">
+                     <a
+                        href="https://github.com/0x0z0n/Threat-Intel-HASH-Conversion"
+                        target="_blank"
+                        ><i class="fa-brands fa-github"></i
+                     ></a>
+                  </div>
+               </div>
+               <h3>Automated Malware Scanner</h3>
+               <p>
+                  A SOC automation tool designed to bulk scan IOCs (File Hashes)
+                  against Threat Intelligence APIs. Features rate-limiting logic
+                  and reporting.
+               </p>
+               <ul class="project-tech-list">
+                  <li>Python 3.13</li>
+                  <li>Pandas</li>
+                  <li>REST APIs</li>
+               </ul>
             </div>
-            <h3>CropVision AI</h3>
-            <p>
-                A computer vision application utilizing CNNs to detect agricultural anomalies with 93% accuracy. Demonstrates proficiency in AI/ML integration.
-            </p>
-            <ul class="project-tech-list">
-                <li>Python</li>
-                <li>TensorFlow</li>
-                <li>CNN</li>
-                <li>Flask</li>
-            </ul>
-        </div>
 
-        <div class="project-card">
-            <div class="project-top">
-                <i class="fa-regular fa-folder folder-icon"></i>
-                <div class="project-links">
-                    <a href="https://github.com/0x0z0n/Threat-Intel-HASH-Conversion" target="_blank"><i class="fa-brands fa-github"></i></a>
-                </div>
+            <div class="project-card">
+               <div class="project-top">
+                  <i class="fa-regular fa-folder folder-icon"></i>
+                  <div class="project-links">
+                     <a
+                        href="https://0x0z0n.github.io/Research/"
+                        target="_blank"
+                        ><i class="fa-solid fa-book"></i
+                     ></a>
+                  </div>
+               </div>
+               <h3>Security Knowledge Base</h3>
+               <p>
+                  A centralized repository for technical writeups, CTF
+                  walkthroughs, and Red Teaming cheatsheets. Serves as a
+                  documentation hub.
+               </p>
+               <ul class="project-tech-list">
+                  <li>Markdown</li>
+                  <li>Jekyll</li>
+                  <li>JS</li>
+               </ul>
             </div>
-            <h3>Automated Malware Scanner</h3>
-            <p>
-                A SOC automation tool designed to bulk scan IOCs (File Hashes) against Threat Intelligence APIs. Features rate-limiting logic and reporting.
-            </p>
-            <ul class="project-tech-list">
-                <li>Python 3.13</li>
-                <li>Pandas</li>
-                <li>REST APIs</li>
-            </ul>
-        </div>
 
-        <div class="project-card">
-            <div class="project-top">
-                <i class="fa-regular fa-folder folder-icon"></i>
-                <div class="project-links">
-                    <a href="https://0x0z0n.github.io/Research/" target="_blank"><i class="fa-solid fa-book"></i></a>
-                </div>
+            <div class="project-card">
+               <div class="project-top">
+                  <i class="fa-regular fa-folder folder-icon"></i>
+                  <div class="project-links">
+                     <a
+                        href="https://github.com/0x0z0n/GPU-Profiler"
+                        target="_blank"
+                        ><i class="fa-brands fa-github"></i
+                     ></a>
+                     <a
+                        href="https://0x0z0n.github.io/Research/posts/GPU_Profiler/"
+                        target="_blank"
+                        ><i class="fa-solid fa-book"></i
+                     ></a>
+                  </div>
+               </div>
+               <h3>z0n GPU Profiler</h3>
+               <p>
+                  A high-performance hardware orchestration dashboard for Linux.
+                  Optimized for NVIDIA PRIME offloading with real-time M-Power
+                  inspired telemetry gauges and dual-module execution for
+                  GUI/CLI tools.
+               </p>
+               <ul class="project-tech-list">
+                  <li>Python 3.13</li>
+                  <li>CustomTkinter</li>
+                  <li>NVIDIA-SMI</li>
+                  <li>Bash</li>
+               </ul>
             </div>
-            <h3>Security Knowledge Base</h3>
-            <p>
-                A centralized repository for technical writeups, CTF walkthroughs, and Red Teaming cheatsheets. Serves as a documentation hub.
-            </p>
-            <ul class="project-tech-list">
-                <li>Markdown</li>
-                <li>Jekyll</li>
-                <li>JS</li>
-            </ul>
-        </div>
-
-        <div class="project-card">
-            <div class="project-top">
-                <i class="fa-regular fa-folder folder-icon"></i>
-                <div class="project-links">
-                    <a href="https://github.com/0x0z0n/GPU-Profiler" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://0x0z0n.github.io/Research/posts/GPU_Profiler/" target="_blank"><i class="fa-solid fa-book"></i></a>
-                </div>
-            </div>
-            <h3>z0n GPU Profiler</h3>
-            <p>
-                A high-performance hardware orchestration dashboard for Linux. Optimized for NVIDIA PRIME offloading with real-time M-Power inspired telemetry gauges and dual-module execution for GUI/CLI tools.
-            </p>
-            <ul class="project-tech-list">
-                <li>Python 3.13</li>
-                <li>CustomTkinter</li>
-                <li>NVIDIA-SMI</li>
-                <li>Bash</li>
-            </ul>
-        </div>
-
-    </div>
-</section>
-    <section id="certifications">
-        <h2 class="section-title">Certifications</h2>
-        <div class="swiper mySwiper">
+         </div>
+      </section>
+      <section id="certifications">
+         <h2 class="section-title">Certifications</h2>
+         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
+               <div class="swiper-slide">
+                  <div class="cert-img-wrapper">
+                     <img src="./Cert/Digital_Forensics.png" alt="Forensics" />
+                  </div>
+                  <div class="cert-info">
+                     <h5>Digital Forensics</h5>
+                     <p>CEMCA</p>
+                  </div>
+               </div>
 
-                <div class="swiper-slide">
-                    <div class="cert-img-wrapper">
-                        <img src="./Cert/Digital_Forensics.png" alt="Forensics">
-                    </div>
-                    <div class="cert-info">
-                        <h5>Digital Forensics</h5>
-                        <p>CEMCA</p>
-                    </div>
-                </div>
-                
-                <div class="swiper-slide">
-                    <div class="cert-img-wrapper">
-                        <img src="./Cert/THM1.png" alt="AoC 2021">
-                    </div>
-                    <div class="cert-info">
-                        <h5>Advent of Cyber 2021</h5>
-                        <p>TryHackMe</p>
-                    </div>
-                </div>
-                
-                <div class="swiper-slide">
-                    <div class="cert-img-wrapper">
-                        <img src="./Cert/DL.png" alt="Deep Learning">
-                    </div>
-                    <div class="cert-info">
-                        <h5>Deep Learning</h5>
-                        <p>DeepLearning.AI</p>
-                    </div>
-                </div>
+               <div class="swiper-slide">
+                  <div class="cert-img-wrapper">
+                     <img src="./Cert/THM1.png" alt="AoC 2021" />
+                  </div>
+                  <div class="cert-info">
+                     <h5>Advent of Cyber 2021</h5>
+                     <p>TryHackMe</p>
+                  </div>
+               </div>
 
-                <div class="swiper-slide">
-                    <div class="cert-img-wrapper">
-                        <img src="./Cert/ISEA_Hygiene.png" alt="Security">
-                    </div>
-                    <div class="cert-info">
-                        <h5>Cyber Hygiene Practices</h5>
-                        <p>MeitY</p>
-                    </div>
-                </div>
-                
+               <div class="swiper-slide">
+                  <div class="cert-img-wrapper">
+                     <img src="./Cert/DL.png" alt="Deep Learning" />
+                  </div>
+                  <div class="cert-info">
+                     <h5>Deep Learning</h5>
+                     <p>DeepLearning.AI</p>
+                  </div>
+               </div>
 
-                <div class="swiper-slide">
-                    <div class="cert-img-wrapper">
-                        <img src="./Cert/THM2.png" alt="AoC 2022">
-                    </div>
-                    <div class="cert-info">
-                        <h5>Advent of Cyber 2022</h5>
-                        <p>TryHackMe</p>
-                    </div>
-                </div>
+               <div class="swiper-slide">
+                  <div class="cert-img-wrapper">
+                     <img src="./Cert/ISEA_Hygiene.png" alt="Security" />
+                  </div>
+                  <div class="cert-info">
+                     <h5>Cyber Hygiene Practices</h5>
+                     <p>MeitY</p>
+                  </div>
+               </div>
 
-                <div class="swiper-slide">
-                    <div class="cert-img-wrapper">
-                        <img src="./Cert/THM3.png" alt="AoC 2023">
-                    </div>
-                    <div class="cert-info">
-                        <h5>Advent of Cyber 2023</h5>
-                        <p>TryHackMe</p>
-                    </div>
-                </div>
+               <div class="swiper-slide">
+                  <div class="cert-img-wrapper">
+                     <img src="./Cert/THM2.png" alt="AoC 2022" />
+                  </div>
+                  <div class="cert-info">
+                     <h5>Advent of Cyber 2022</h5>
+                     <p>TryHackMe</p>
+                  </div>
+               </div>
 
-                <div class="swiper-slide">
-                    <div class="cert-img-wrapper">
-                        <img src="./Cert/THM4.png" alt="AoC 2024">
-                    </div>
-                    <div class="cert-info">
-                        <h5>Advent of Cyber 2024</h5>
-                        <p>TryHackMe</p>
-                    </div>
-                </div>
+               <div class="swiper-slide">
+                  <div class="cert-img-wrapper">
+                     <img src="./Cert/THM3.png" alt="AoC 2023" />
+                  </div>
+                  <div class="cert-info">
+                     <h5>Advent of Cyber 2023</h5>
+                     <p>TryHackMe</p>
+                  </div>
+               </div>
 
-                <div class="swiper-slide">
-                    <div class="cert-img-wrapper">
-                        <img src="./Cert/Internship.png" alt="CS & DF">
-                    </div>
-                    <div class="cert-info">
-                        <h5>Cybersecurity & Digital Forensics Intern</h5>
-                        <p>Cyber Secured India</p>
-                    </div>
-                </div>
+               <div class="swiper-slide">
+                  <div class="cert-img-wrapper">
+                     <img src="./Cert/THM4.png" alt="AoC 2024" />
+                  </div>
+                  <div class="cert-info">
+                     <h5>Advent of Cyber 2024</h5>
+                     <p>TryHackMe</p>
+                  </div>
+               </div>
 
-                <div class="swiper-slide">
-                    <div class="cert-img-wrapper">
-                        <img src="./Cert/THM_Cert.png" alt="AoC 2025">
-                    </div>
-                    <div class="cert-info">
-                        <h5>Advent of Cyber 2025</h5>
-                        <p>TryHackMe</p>
-                    </div>
-                </div>
+               <div class="swiper-slide">
+                  <div class="cert-img-wrapper">
+                     <img src="./Cert/Internship.png" alt="CS & DF" />
+                  </div>
+                  <div class="cert-info">
+                     <h5>Cybersecurity & Digital Forensics Intern</h5>
+                     <p>Cyber Secured India</p>
+                  </div>
+               </div>
 
+               <div class="swiper-slide">
+                  <div class="cert-img-wrapper">
+                     <img src="./Cert/THM_Cert.png" alt="AoC 2025" />
+                  </div>
+                  <div class="cert-info">
+                     <h5>Advent of Cyber 2025</h5>
+                     <p>TryHackMe</p>
+                  </div>
+               </div>
             </div>
             <div class="swiper-pagination"></div>
-        </div>
-    </section>
+         </div>
+      </section>
 
-    <section id="skills-cloud" style="text-align: center;">
-        <h2 class="mono-heading">Skills</h2>
-        <h2 style="color: #e6f1ff; margin-bottom: 40px;">My Arsenal's Current Operational Loadout</h2>
-        <div id="skillsList">
-            <span style="color: var(--text-muted); font-family: var(--font-mono);">Decrypting Matrix Data...</span>
-        </div>
-    </section>
+      <section id="skills-cloud" style="text-align: center">
+         <h2 class="mono-heading">Skills</h2>
+         <h2 style="color: #e6f1ff; margin-bottom: 40px">
+            My Arsenal's Current Operational Loadout
+         </h2>
+         <div id="skillsList">
+            <span
+               style="color: var(--text-muted); font-family: var(--font-mono)"
+               >Decrypting Matrix Data...</span
+            >
+         </div>
+      </section>
 
-    <section id="contact" style="text-align: center; max-width: 600px; padding-bottom: 150px;">
-        <h2 class="mono-heading">What's Next?</h2>
-        <h2 style="font-size: 50px; margin-bottom: 20px;">Get In Touch</h2>
-        <p>
-            I am actively looking for new opportunities in Red Teaming and Offensive Security. Whether you have a question or just want to say hi, my inbox is always open!
-        </p>
-        <a href="mailto:kshitijraut360@gmail.com" class="btn-outline" style="margin-top: 50px;">Say Hello</a>
-    </section>
+      <section
+         id="contact"
+         style="text-align: center; max-width: 600px; padding-bottom: 150px"
+      >
+         <h2 class="mono-heading">What's Next?</h2>
+         <h2 style="font-size: 50px; margin-bottom: 20px">Get In Touch</h2>
+         <p>
+            I am actively looking for new opportunities in Red Teaming and
+            Offensive Security. Whether you have a question or just want to say
+            hi, my inbox is always open!
+         </p>
+         <a
+            href="mailto:kshitijraut360@gmail.com"
+            class="btn-outline"
+            style="margin-top: 50px"
+            >Say Hello</a
+         >
+      </section>
 
-    <footer style="text-align: center; padding: 20px; font-family: var(--font-mono); font-size: 12px; color: var(--text-muted);">
-        <p>Built by 0x0z0n</p>
-    </footer>
+      <footer
+         style="
+            text-align: center;
+            padding: 20px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-muted);
+         "
+      >
+         <p>Built by 0x0z0n</p>
+      </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-    <script>
-        // --- Swiper Init ---
-        var swiper = new Swiper(".mySwiper", {
+      <script>
+         // --- Swiper Init ---
+         var swiper = new Swiper(".mySwiper", {
             effect: "coverflow",
             grabCursor: true,
             centeredSlides: true,
             slidesPerView: "auto",
             initialSlide: 2, // Start in middle
             coverflowEffect: {
-                rotate: 20,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: true,
+               rotate: 20,
+               stretch: 0,
+               depth: 100,
+               modifier: 1,
+               slideShadows: true,
             },
             pagination: {
-                el: ".swiper-pagination",
-                clickable: true
+               el: ".swiper-pagination",
+               clickable: true,
             },
             autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            }
-        });
+               delay: 2500,
+               disableOnInteraction: false,
+            },
+         });
 
-        // --- Fetch Skills ---
-        fetch("https://0x0z0n.github.io/Research/data/posts.json")
-            .then(res => res.json())
-            .then(posts => {
-                const categories = {};
-                posts.forEach(post => {
-                    const catField = post.category || "Uncategorized";
-                    const catList = Array.isArray(catField) ? catField : [catField];
-                    catList.forEach(cat => { categories[cat] = (categories[cat] || 0) + 1; });
-                });
-                const container = document.getElementById("skillsList");
-                container.innerHTML = ''; 
-                
-                Object.keys(categories).sort().forEach(cat => {
-                    if (cat === "CheatSheet") return;
-                    const link = document.createElement("a");
-                    link.href = `https://0x0z0n.github.io/Research/index.html?search=${encodeURIComponent(cat)}`;
-                    link.target = "_blank";
-                    link.className = "skill-pill";
-                    link.textContent = cat;
-                    container.appendChild(link);
-                });
+         // --- Fetch Skills ---
+         fetch("https://0x0z0n.github.io/Research/data/posts.json")
+            .then((res) => res.json())
+            .then((posts) => {
+               const categories = {};
+               posts.forEach((post) => {
+                  const catField = post.category || "Uncategorized";
+                  const catList = Array.isArray(catField)
+                     ? catField
+                     : [catField];
+                  catList.forEach((cat) => {
+                     categories[cat] = (categories[cat] || 0) + 1;
+                  });
+               });
+               const container = document.getElementById("skillsList");
+               container.innerHTML = "";
+
+               Object.keys(categories)
+                  .sort()
+                  .forEach((cat) => {
+                     if (cat === "CheatSheet") return;
+                     const link = document.createElement("a");
+                     link.href = `https://0x0z0n.github.io/Research/index.html?search=${encodeURIComponent(cat)}`;
+                     link.target = "_blank";
+                     link.className = "skill-pill";
+                     link.textContent = cat;
+                     container.appendChild(link);
+                  });
             })
-            .catch(err => {
-                document.getElementById("skillsList").innerHTML = '<span style="color: #ff5f56; font-family: monospace;">Failed to load skills data.</span>';
+            .catch((err) => {
+               document.getElementById("skillsList").innerHTML =
+                  '<span style="color: #ff5f56; font-family: monospace;">Failed to load skills data.</span>';
             });
-            
-        // --- Navbar Scroll Effect ---
-        let lastScrollTop = 0;
-        const navbar = document.querySelector('.navbar');
 
-        window.addEventListener('scroll', function() {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+         // --- Navbar Scroll Effect ---
+         let lastScrollTop = 0;
+         const navbar = document.querySelector(".navbar");
+
+         window.addEventListener("scroll", function () {
+            let scrollTop =
+               window.pageYOffset || document.documentElement.scrollTop;
             if (scrollTop > 50) {
-                navbar.style.boxShadow = "0 10px 30px -10px rgba(2, 12, 27, 0.7)";
-                navbar.style.padding = "10px 50px"; // Shrink padding
+               navbar.style.boxShadow =
+                  "0 10px 30px -10px rgba(2, 12, 27, 0.7)";
+               navbar.style.padding = "10px 50px"; // Shrink padding
             } else {
-                navbar.style.boxShadow = "none";
-                navbar.style.padding = "20px 50px"; // Restore padding
+               navbar.style.boxShadow = "none";
+               navbar.style.padding = "20px 50px"; // Restore padding
             }
             lastScrollTop = scrollTop;
-        });
-    </script>
-</body>
+         });
+      </script>
+   </body>
 </html>
