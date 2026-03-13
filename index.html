@@ -330,7 +330,6 @@
 
          .skills-list li {
             position: relative;
-            /* margin-bottom: 10px;  <-- Removed margin to let 'gap' handle spacing */
             padding-left: 20px;
             font-family: var(--font-mono);
             font-size: 13px;
@@ -524,18 +523,18 @@
          }
 
          /* --- SKILLS PILLS --- */
-         #skillsList {
+         #skillsList, #platformsList {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
          }
 
          .skill-pill {
             border: 1px solid var(--accent);
             color: var(--accent);
             border-radius: 50px;
-            padding: 8px 16px;
+            padding: 10px 20px; /* Updated for thicker pill look */
             font-family: var(--font-mono);
             font-size: 12px;
             transition: var(--trans);
@@ -927,6 +926,7 @@
             </div>
          </div>
       </section>
+
       <section id="certifications">
          <h2 class="section-title">Certifications</h2>
          <div class="swiper mySwiper">
@@ -1025,27 +1025,18 @@
          </div>
       </section>
 
-      <section id="skills-cloud" style="text-align: center">
-         <h2 class="mono-heading">Platforms</h2>
-         <div
-            id="platformsList"
-            style="
-               display: flex;
-               flex-wrap: wrap;
-               justify-content: center;
-               gap: 10px;
-               margin-bottom: 60px;
-            "
-         ></div>
+      <section id="skills-cloud" style="text-align: center; max-width: 900px; margin: 0 auto; padding-top: 50px;">
+         
+         <h2 class="mono-heading" style="margin-bottom: 20px;">Platforms</h2>
+         <div id="platformsList" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 60px;">
+            </div>
 
-         <h2 class="mono-heading">Skills</h2>
-         <h2 style="color: #e6f1ff; margin-bottom: 40px">
+         <h2 class="mono-heading" style="margin-bottom: 15px;">Skills</h2>
+         <h2 style="color: #e6f1ff; font-size: 32px; font-weight: 700; margin-bottom: 40px;">
             My Arsenal's Current Operational Loadout
          </h2>
-         <div id="skillsList">
-            <span
-               style="color: var(--text-muted); font-family: var(--font-mono)"
-            >
+         <div id="skillsList" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+            <span style="color: var(--text-muted); font-family: var(--font-mono)">
                Decrypting Matrix Data...
             </span>
          </div>
@@ -1122,10 +1113,10 @@
          if (platformsContainer) {
             platformsContainer.innerHTML = Object.keys(profileLinks)
                .map((platform) => {
-                  // Using inline styles to make profile buttons look slightly distinct from skill pills
-                  return `<a href="${profileLinks[platform]}" target="_blank" class="skill-pill" style="color: #e6f1ff; border-color: #233554; background-color: var(--bg-light);">
-                          ${platform} <i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 6px; font-size: 11px;"></i>
-                       </a>`;
+                  return `<a href="${profileLinks[platform]}" target="_blank" class="skill-pill" 
+                             style="color: #e6f1ff; border-color: #233554; background-color: transparent; display: flex; align-items: center; gap: 8px; padding: 10px 20px;">
+                             ${platform} <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px; opacity: 0.8;"></i>
+                          </a>`;
                })
                .join("");
          }
@@ -1166,6 +1157,7 @@
                      link.href = `https://0x0z0n.github.io/Research/index.html?search=${encodeURIComponent(cat)}`;
                      link.target = "_blank";
                      link.className = "skill-pill";
+                     link.style.padding = "10px 20px"; // Match the thicker pill size
                      link.textContent = cat;
                      container.appendChild(link);
                   });
