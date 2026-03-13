@@ -1026,6 +1026,18 @@
       </section>
 
       <section id="skills-cloud" style="text-align: center">
+         <h2 class="mono-heading">Platforms</h2>
+         <div
+            id="platformsList"
+            style="
+               display: flex;
+               flex-wrap: wrap;
+               justify-content: center;
+               gap: 10px;
+               margin-bottom: 60px;
+            "
+         ></div>
+
          <h2 class="mono-heading">Skills</h2>
          <h2 style="color: #e6f1ff; margin-bottom: 40px">
             My Arsenal's Current Operational Loadout
@@ -1033,8 +1045,9 @@
          <div id="skillsList">
             <span
                style="color: var(--text-muted); font-family: var(--font-mono)"
-               >Decrypting Matrix Data...</span
             >
+               Decrypting Matrix Data...
+            </span>
          </div>
       </section>
 
@@ -1097,7 +1110,27 @@
             },
          });
 
-         // --- Fetch Skills ---
+         // --- Profiles & Skills Logic ---
+         const profileLinks = {
+            HackTheBox: "https://app.hackthebox.com/public/users/1761906",
+            INE: "https://showcase.ine.com/ctf/profile/smMenr3r2resjaOPiOCyn7rhi6Y2",
+            TryHackMe: "https://tryhackme.com/p/0x0z0n",
+         };
+
+         // 1. Render Platform Links
+         const platformsContainer = document.getElementById("platformsList");
+         if (platformsContainer) {
+            platformsContainer.innerHTML = Object.keys(profileLinks)
+               .map((platform) => {
+                  // Using inline styles to make profile buttons look slightly distinct from skill pills
+                  return `<a href="${profileLinks[platform]}" target="_blank" class="skill-pill" style="color: #e6f1ff; border-color: #233554; background-color: var(--bg-light);">
+                          ${platform} <i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 6px; font-size: 11px;"></i>
+                       </a>`;
+               })
+               .join("");
+         }
+
+         // 2. Fetch and Render Skills (Excluding Platforms)
          fetch("https://0x0z0n.github.io/Research/data/posts.json")
             .then((res) => res.json())
             .then((posts) => {
@@ -1111,13 +1144,24 @@
                      categories[cat] = (categories[cat] || 0) + 1;
                   });
                });
+
                const container = document.getElementById("skillsList");
                container.innerHTML = "";
+
+               // Array of categories to EXCLUDE from the Skills cloud
+               const excludeFromSkills = [
+                  "CheatSheet",
+                  "HackTheBox",
+                  "INE",
+                  "TryHackMe",
+               ];
 
                Object.keys(categories)
                   .sort()
                   .forEach((cat) => {
-                     if (cat === "CheatSheet") return;
+                     // If the category is in our exclude list, skip it
+                     if (excludeFromSkills.includes(cat)) return;
+
                      const link = document.createElement("a");
                      link.href = `https://0x0z0n.github.io/Research/index.html?search=${encodeURIComponent(cat)}`;
                      link.target = "_blank";
