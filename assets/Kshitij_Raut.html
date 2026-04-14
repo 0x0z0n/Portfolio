@@ -31,7 +31,6 @@
             font-size: 10.5pt;
         }
 
-        /* --- PAPER SHEET STYLE --- */
         .page {
             background: white;
             width: 210mm;
@@ -41,14 +40,13 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        /* --- LINKS --- */
         a {
             color: var(--accent-color);
             text-decoration: none;
         }
+        
         a:hover { text-decoration: underline; }
 
-        /* --- HEADER --- */
         header {
             border-bottom: 2px solid #eee;
             padding-bottom: 20px;
@@ -71,20 +69,21 @@
         }
 
         .contact-info {
-            font-size: 9pt;
+            font-size: 9.5pt;
             color: var(--text-gray);
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
+            font-weight: 600;
         }
 
         .contact-info span {
             display: flex;
             align-items: center;
             gap: 5px;
+            color: var(--text-dark);
         }
 
-        /* --- SECTIONS --- */
         section {
             margin-bottom: 20px;
         }
@@ -93,17 +92,17 @@
             font-size: 11pt;
             text-transform: uppercase;
             border-bottom: 1px solid #000;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             padding-bottom: 3px;
             letter-spacing: 1px;
+            font-weight: 700;
         }
 
-        /* --- EXPERIENCE & PROJECTS --- */
         .job-header, .project-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         .job-title {
@@ -118,13 +117,13 @@
         }
 
         .company {
-            font-weight: 400;
-            font-style: italic;
+            font-weight: 600;
+            color: var(--text-gray);
         }
 
         .date {
-            font-size: 9pt;
-            font-weight: 600;
+            font-size: 9.5pt;
+            font-weight: 700;
             color: var(--text-dark);
             text-align: right;
         }
@@ -136,23 +135,14 @@
         }
 
         li {
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
 
-        /* --- SKILLS GRID --- */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 120px 1fr;
-            gap: 10px;
-            margin-bottom: 5px;
+        .skills-content {
+            margin-bottom: 10px;
+            line-height: 1.6;
         }
 
-        .skill-category {
-            font-weight: 700;
-            font-size: 10pt;
-        }
-
-        /* --- PRINT BUTTON --- */
         .no-print {
             text-align: center;
             padding: 20px;
@@ -171,7 +161,6 @@
         
         button:hover { background-color: #003d82; }
 
-        /* --- PRINT MEDIA QUERY --- */
         @media print {
             body {
                 background: none;
@@ -198,38 +187,28 @@
         <header>
             <h1>Kshitij Raut <span class="alias">(0x0z0n)</span></h1>
             <div class="contact-info">
+                <span><i class="fa-solid fa-phone"></i> +91-9876543210</span>
+                <span><i class="fa-solid fa-envelope"></i> kshitijraut360@gmail.com</span>
                 <span><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra, India</span>
-                <span><i class="fa-solid fa-envelope"></i> <a href="mailto:kshitijraut360@gmail.com">kshitijraut360@gmail.com</a></span>
-                <span><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/kshitijnraut/" target="_blank">linkedin.com/in/kshitijnraut</a></span>
-                <span><i class="fa-brands fa-github"></i> <a href="https://github.com/0x0z0n" target="_blank">github.com/0x0z0n</a></span>
-                <span><i class="fa-solid fa-globe"></i> <a href="https://0x0z0n.github.io/Portfolio/" target="_blank">0x0z0n.github.io</a></span>
+                <span><i class="fa-brands fa-linkedin"></i> linkedin.com/in/kshitijnraut</span>
+                <span><i class="fa-brands fa-github"></i> github.com/0x0z0n</span>
             </div>
         </header>
 
         <section>
             <h2 class="section-title">Professional Summary</h2>
             <p>
-                Results-driven Cybersecurity Analyst specializing in bridging Offensive Security (Red Teaming) with advanced L2 SOC Operations. Proven expertise in executing targeted adversary simulations, threat hunting, and vulnerability assessments. Highly adept in Windows Internals, Kernel Debugging, and C2 framework deployment. Demonstrated ability to automate high-fidelity triage pipelines and reduce false positive rates by over 20%, currently transitioning toward enterprise-grade Penetration Testing.
+                Cybersecurity Analyst and Penetration Tester with 2+ years of experience in Security Operations Center (SOC) environments and Offensive Security. Expertise in Threat Hunting, Vulnerability Management, and Red Teaming aligned with MITRE ATT&CK and OWASP Top 10 frameworks. Proven track record of automating Incident Response (IR) pipelines using Python, reducing false positive rates by 20%, and securing enterprise infrastructures against Advanced Persistent Threats (APTs).
             </p>
         </section>
 
         <section>
-            <h2 class="section-title">Core Competencies & Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">Offensive Security</div>
-                <div>Penetration Testing (VAPT), Red Teaming, Windows Internals, Kernel Debugging, C2 Frameworks, Burp Suite, Active Directory Exploitation, Linux (Kali bare-metal).</div>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-category">Defensive Security</div>
-                <div>L2 SOC Operations, Incident Response (IR), Microsoft Sentinel, Chronicle SIEM, XDR, KQL, Malware Analysis, Digital Forensics, Threat Intelligence.</div>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-category">Engineering</div>
-                <div>Rust, Tauri, Python, Bash, Docker, Kubernetes, DevSecOps, REST APIs, Git.</div>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-category">AI & Data</div>
-                <div>Machine Learning (CNNs), Computer Vision, TensorFlow, Pandas.</div>
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-content">
+                <strong>Offensive Security & Red Teaming:</strong> Penetration Testing, Vulnerability Assessments (VAPT), C2 Frameworks, Active Directory Exploitation, Kernel Debugging, Windows Internals, Burp Suite, Metasploit, Kali Linux.<br>
+                <strong>Defensive Security & SOC:</strong> L2 SOC Operations, Incident Response (IR), Microsoft Sentinel, Chronicle SIEM, XDR / EDR, KQL, Threat Intelligence, Malware Analysis, Digital Forensics, Risk Management.<br>
+                <strong>Engineering & Development:</strong> Python, Rust, Bash, Assembly, Tauri, Docker, Kubernetes, DevSecOps, Git, REST APIs.<br>
+                <strong>AI & Frameworks:</strong> Machine Learning, Convolutional Neural Networks (CNN), TensorFlow, Pandas, Flask, MITRE ATT&CK, NIST, OWASP.
             </div>
         </section>
 
@@ -238,15 +217,15 @@
 
             <div class="experience-item">
                 <div class="job-header">
-                    <span class="job-title">Cybersecurity Analyst (L2 SOC & Red Teaming) <span class="company">| Tata Consultancy Services (TCS)</span></span>
+                    <span class="job-title">Cybersecurity Analyst <span class="company">| Tata Consultancy Services (TCS)</span></span>
                     <span class="date">March 2024 – Present</span>
                 </div>
                 <ul>
-                    <li>Spearheaded L2 SIEM/XDR triage operations during critical P1 incidents across enterprise environments, ensuring strict SLA compliance.</li>
-                    <li>Analyzed and mitigated 50+ complex weekly security alerts, proactively tuning correlation rules to drive a <strong>20% reduction</strong> in false positives.</li>
-                    <li>Executed advanced penetration testing engagements, developing custom payloads and leveraging C2 infrastructure to simulate sophisticated adversary behaviors.</li>
-                    <li>Conducted comprehensive vulnerability assessments, validated remediation architectures, and improved overall infrastructure compliance by <strong>15%</strong>.</li>
-                    <li>Engineered automated Python pipelines for log parsing and dynamic threat intelligence feed integration, accelerating incident response MTTR.</li>
+                    <li>Lead L2 SOC Incident Response (IR) operations for critical P1 enterprise threats, ensuring 100% SLA compliance for triage and remediation.</li>
+                    <li>Analyze and mitigate 50+ complex security alerts weekly via Microsoft Sentinel and XDR, mapping behaviors to the MITRE ATT&CK framework.</li>
+                    <li>Execute targeted penetration testing and red team adversary simulations, identifying critical infrastructure vulnerabilities to improve compliance by 15%.</li>
+                    <li>Develop and deploy Python automation scripts for log parsing, dynamic Threat Intelligence integration, and IOC extraction, reducing false positive rates by 20%.</li>
+                    <li>Conduct endpoint forensics and deep malware analysis to isolate root causes and neutralize Advanced Persistent Threats (APTs) in hybrid environments.</li>
                 </ul>
             </div>
 
@@ -254,75 +233,61 @@
 
             <div class="experience-item">
                 <div class="job-header">
-                    <div>
-                        <span class="job-title">Cybersecurity & Digital Forensics Intern <span class="company">| Cyber Secured India</span></span>
-                        <a href="https://drive.google.com/drive/folders/1yOQo9bXDMNMW0VY2qXeg-PsIlD_jG_Pj?usp=drive_link" target="_blank" class="project-link"><i class="fa-solid fa-folder-open"></i> View Docs</a>
-                    </div>
-                    <span class="date">Dec 2023 – Mar 2024</span>
+                    <span class="job-title">Cybersecurity & Forensics Intern <span class="company">| Cyber Secured India</span></span>
+                    <span class="date">December 2023 – March 2024</span>
                 </div>
                 <ul>
-                    <li>Orchestrated digital forensic investigations encompassing deep malware analysis, comprehensive log review, and critical evidence recovery.</li>
-                    <li>Drafted and presented detailed incident mitigation and vulnerability assessment reports to technical stakeholders.</li>
-                    <li>Completed 36+ hours/week of rigorous hands-on training focused on proactive security operations and forensic methodology.</li>
+                    <li>Executed digital forensic investigations, including log review, memory forensics, and robust evidence recovery protocols.</li>
+                    <li>Drafted vulnerability assessment reports and incident mitigation strategies for senior technical stakeholders.</li>
+                    <li>Completed intensive hands-on operational training in proactive security monitoring and defensive SOC workflows.</li>
                 </ul>
             </div>
         </section>
 
         <section>
-            <h2 class="section-title">Key Projects & Tools</h2>
+            <h2 class="section-title">Projects</h2>
             
             <div class="project-header">
-                <div>
-                    <span class="job-title">OVERRIDE PROTOCOL (z0n GPU Profiler)</span>
-                    <a href="https://github.com/0x0z0n/GPU-Profiler" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> View Code</a>
-                </div>
-                <span class="date">Rust, Tauri, NVIDIA PRIME</span>
+                <span class="job-title">OVERRIDE PROTOCOL (z0n GPU Profiler) | <span class="company">Rust, Tauri, Linux</span></span>
+                <span class="date">2026</span>
             </div>
             <ul>
-                <li>Engineered a high-performance hardware orchestration dashboard (v0.1.1) utilizing <strong>Rust and Tauri</strong> for bare-metal Linux environments.</li>
-                <li>Optimized for NVIDIA PRIME offloading, featuring real-time telemetry gauges and a tactical, retrofuturistic UI for executing dual-module GUI/CLI operations.</li>
+                <li>Engineered a high-performance bare-metal hardware orchestration dashboard utilizing Rust and Tauri for Linux operating systems.</li>
+                <li>Optimized system architecture for NVIDIA PRIME offloading, featuring real-time telemetry and dual-module GUI/CLI execution.</li>
             </ul>
 
             <div class="project-header" style="margin-top: 10px;">
-                <div>
-                    <span class="job-title">Automated Threat Intelligence Scanner</span>
-                    <a href="https://github.com/0x0z0n/Threat-Intel-HASH-Conversion" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> View Code</a>
-                </div>
-                <span class="date">Python, Pandas, REST APIs</span>
+                <span class="job-title">Automated Threat Intelligence Scanner | <span class="company">Python, Pandas, REST APIs</span></span>
+                <span class="date">2025</span>
             </div>
             <ul>
-                <li>Developed a scalable SOC automation tool to bulk-scan IOCs (File Hashes) against multi-source Threat Intelligence feeds, bypassing manual triage limitations.</li>
-                <li>Implemented API rate-limiting architecture and automated PDF reporting generation.</li>
+                <li>Developed an automated SOC triage tool utilizing Python to bulk-scan IOCs (File Hashes) against multi-source Threat Intelligence platforms.</li>
+                <li>Engineered API rate-limiting logic and automated PDF reporting to significantly accelerate incident response lifecycles.</li>
             </ul>
 
             <div class="project-header" style="margin-top: 10px;">
-                <div>
-                    <span class="job-title">CropVision AI & AppSec</span>
-                    <a href="https://github.com/0x0z0n/CropVision" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> View Code</a>
-                </div>
-                <span class="date">TensorFlow, CNN, Flask</span>
+                <span class="job-title">CropVision AI & Application Security | <span class="company">TensorFlow, CNN, AppSec</span></span>
+                <span class="date">2025</span>
             </div>
             <ul>
-                <li>Built a machine learning application utilizing Convolutional Neural Networks (CNNs) to detect agricultural anomalies, achieving a highly verified <strong>95% accuracy rate</strong>.</li> 
-                <li>Conducted adversarial file upload testing to remediate a critical RCE vulnerability, implementing deep content inspection (Magic Number verification) to thwart MIME spoofing.</li>
+                <li>Built a Flask web application utilizing Convolutional Neural Networks (CNNs) and Machine Learning to detect agricultural anomalies with 95% accuracy.</li> 
+                <li>Conducted adversarial penetration testing to remediate a critical RCE vulnerability, implementing deep content inspection to prevent MIME spoofing.</li>
             </ul>
         </section>
 
         <section>
-            <h2 class="section-title">Education, Certifications & Achievements</h2>
+            <h2 class="section-title">Education & Certifications</h2>
             
             <div class="job-header">
                 <span class="job-title">Bachelor of Engineering in Computer Science & Data Science</span>
-                <span class="date">CGPA: 9.16</span>
+                <span class="date">Graduated: 2023</span>
             </div>
-            <div class="company" style="margin-bottom: 10px;">Sant Gadge Baba Amravati University</div>
+            <div class="company" style="margin-bottom: 10px;">Sant Gadge Baba Amravati University | CGPA: 9.16</div>
 
             <ul>
-                <li><strong>Advanced Security Tracks:</strong> Currently executing an intensive 20-day practical track focused on Windows Internals and Kernel Debugging.</li>
-                <li><strong>Top Global Rankings:</strong> "Pro Hacker" rank on <a href="https://app.hackthebox.com/public/users/1761906" target="_blank">HackTheBox</a> & <strong>Top 5%</strong> on <a href="https://tryhackme.com/p/0x0z0n" target="_blank">TryHackMe</a>.</li>
-                <li><strong>Microsoft Security Operations Analyst (SC-200)</strong></li>
-                <li><strong><a href="https://drive.google.com/file/d/1HFhcKJ5uvuaHyvRTTgnKsjLNZGAreesu/view?usp=drivesdk" target="_blank">T7 Cybersecurity Track</a></strong> (Completed with Distinction)</li>
-                <li><strong>Digital Forensics Online Training Programme:</strong> Uttarakhand Open University & CEMCA.</li>
+                <li><strong>Certifications:</strong> Microsoft Security Operations Analyst (SC-200), Digital Forensics (Uttarakhand Open University).</li>
+                <li><strong>Advanced Security Training:</strong> Executing a 20-day practical track in Windows Internals and Kernel Debugging; Completed T7 Cybersecurity Track with Distinction.</li>
+                <li><strong>Global Competitions:</strong> Achieved "Pro Hacker" rank on HackTheBox and ranked in the Top 5% globally on TryHackMe.</li>
             </ul>
         </section>
 
