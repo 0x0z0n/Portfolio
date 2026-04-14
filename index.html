@@ -1,326 +1,708 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kshitij Raut - Resume</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Kshitij Raut | Portfolio</title>
+      <link rel="icon" type="image/png" href="assets/tab.png" />
 
-    <style>
-        :root {
-            --text-dark: #1a1a1a;
-            --text-gray: #555;
-            --accent-color: #0056b3;
-            --bg-color: #ffffff;
-        }
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Inter:wght@300;400;600;700;800&display=swap"
+         rel="stylesheet"
+      />
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+      <link
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+         rel="stylesheet"
+      />
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-            color: var(--text-dark);
-            line-height: 1.5;
-            font-size: 10.5pt;
-        }
+      <link
+         rel="stylesheet"
+         href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+      />
 
-        .page {
-            background: white;
-            width: 210mm;
-            min-height: 297mm;
-            margin: 20px auto;
-            padding: 40px 50px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+      <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+      />
 
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-        
-        a:hover { text-decoration: underline; }
+      <style>
+         /* --- VARIABLES & RESET --- */
+         :root {
+            --bg-dark: #0a192f;
+            --bg-light: #112240;
+            --text-main: #ccd6f6;
+            --text-muted: #8892b0;
+            --accent: #64ffda;
+            --accent-tint: rgba(100, 255, 218, 0.1);
+            --font-main: "Inter", sans-serif;
+            --font-mono: "Fira Code", monospace;
+            --trans: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+         }
 
-        header {
-            border-bottom: 2px solid #eee;
-            padding-bottom: 20px;
+         body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+         }
+
+         /* --- TYPOGRAPHY --- */
+         h1,
+         h2,
+         h3,
+         h4,
+         h5 {
+            color: #e6f1ff;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+         }
+
+         .mono-heading {
+            font-family: var(--font-mono);
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 400;
             margin-bottom: 20px;
-        }
+         }
 
-        h1 {
-            font-size: 24pt;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        .alias {
-            font-family: 'Courier New', monospace;
-            font-size: 14pt;
-            color: var(--text-gray);
-            font-weight: normal;
-            text-transform: none;
-        }
-
-        .contact-info {
-            font-size: 9.5pt;
-            color: var(--text-gray);
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            font-weight: 600;
-        }
-
-        .contact-info span {
+         .section-title {
             display: flex;
             align-items: center;
-            gap: 5px;
-            color: var(--text-dark);
-        }
+            font-size: 26px;
+            white-space: nowrap;
+            margin-bottom: 40px;
+            color: #e6f1ff;
+         }
 
-        section {
-            margin-bottom: 20px;
-        }
+         .section-title::after {
+            content: "";
+            display: block;
+            width: 300px;
+            height: 1px;
+            background-color: #233554;
+            margin-left: 20px;
+         }
 
-        h2.section-title {
-            font-size: 11pt;
-            text-transform: uppercase;
-            border-bottom: 1px solid #000;
-            margin-bottom: 12px;
-            padding-bottom: 3px;
-            letter-spacing: 1px;
+         a {
+            text-decoration: none;
+            color: var(--accent);
+            transition: var(--trans);
+            display: inline-block;
+            position: relative;
+         }
+
+         /* --- NAVBAR --- */
+         .navbar {
+            background-color: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 20px 50px;
+            transition: var(--trans);
+            box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+         }
+
+         .navbar-brand {
+            font-family: var(--font-mono);
+            color: var(--accent) !important;
             font-weight: 700;
-        }
+            border: 1px solid var(--accent);
+            padding: 5px 10px;
+            border-radius: 4px;
+         }
 
-        .job-header, .project-header {
+         .nav-link {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--text-main) !important;
+            margin-left: 20px;
+         }
+
+         .nav-link:hover {
+            color: var(--accent) !important;
+         }
+
+         /* --- HERO SECTION --- */
+         .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 150px;
+            max-width: 1200px;
+            margin: 0 auto;
+         }
+
+         .hero h1 {
+            color: var(--accent);
+            font-family: var(--font-mono);
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 30px;
+         }
+
+         .hero h2 {
+            font-size: clamp(40px, 8vw, 80px);
+            line-height: 1.1;
+            margin: 0;
+            color: #e6f1ff;
+         }
+
+         /* --- HEARTBEAT ANIMATION --- */
+         @keyframes heartbeat {
+            0% {
+               opacity: 1;
+               transform: scale(1);
+               text-shadow: 0 0 0 rgba(100, 255, 218, 0);
+            }
+            50% {
+               opacity: 0.7;
+               transform: scale(0.98);
+               text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+            }
+            100% {
+               opacity: 1;
+               transform: scale(1);
+               text-shadow: 0 0 0 rgba(100, 255, 218, 0);
+            }
+         }
+
+         .alias-heartbeat {
+            font-family: var(--font-mono);
+            color: var(--accent);
+            font-size: 0.5em; /* Scale relative to the big H2 */
+            margin-left: 15px;
+            vertical-align: middle;
+            display: inline-block;
+            animation: heartbeat 2s infinite ease-in-out;
+         }
+
+         .hero h3 {
+            font-size: clamp(30px, 6vw, 60px);
+            line-height: 1.1;
+            color: var(--text-muted);
+            margin-top: 10px;
+         }
+
+         .hero p {
+            margin-top: 20px;
+            max-width: 540px;
+            font-size: 18px;
+            color: var(--text-muted);
+         }
+
+         .btn-outline {
+            color: var(--accent);
+            background-color: transparent;
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            padding: 18px 25px;
+            font-family: var(--font-mono);
+            font-size: 14px;
+            margin-top: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--trans);
+         }
+
+         .btn-outline:hover {
+            background-color: var(--accent-tint);
+         }
+
+         /* --- SOCIAL SIDEBAR --- */
+         .social-sidebar {
+            position: fixed;
+            bottom: 0;
+            left: 40px;
+            width: 40px;
+            z-index: 10;
+         }
+
+         .social-sidebar ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+         }
+
+         .social-sidebar ul::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 90px;
+            margin: 0 auto;
+            background-color: var(--text-muted);
+         }
+
+         .social-sidebar li {
+            margin-bottom: 20px;
+         }
+
+         .social-sidebar a {
+            color: var(--text-muted);
+            font-size: 20px;
+            transition: var(--trans);
+         }
+
+         .social-sidebar a:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+         }
+
+         /* --- EMAIL SIDEBAR --- */
+         .email-sidebar {
+            position: fixed;
+            bottom: 0;
+            right: 40px;
+            width: 40px;
+            z-index: 10;
+         }
+
+         .email-sidebar div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+         }
+
+         .email-sidebar a {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            writing-mode: vertical-rl;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+         }
+
+         .email-sidebar a:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+         }
+
+         .email-sidebar::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 90px;
+            margin: 0 auto;
+            background-color: var(--text-muted);
+         }
+
+         /* --- SECTIONS GENERAL --- */
+         section {
+            padding: 100px 0;
+            max-width: 1000px;
+            margin: 0 auto;
+         }
+
+         /* --- ABOUT --- */
+         .about-inner {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 50px;
+         }
+
+         /* --------------------------------------------------------- */
+         /* MODIFIED: Skills Grid Layout                              */
+         /* --------------------------------------------------------- */
+         .skills-list {
+            display: grid;
+            /* Force exactly two columns */
+            grid-template-columns: 1fr 1fr;
+            /* Add spacing between the grid items */
+            gap: 10px;
+            padding: 0;
+            margin: 20px 0 0 0;
+            overflow: hidden;
+            list-style: none;
+         }
+
+         /* Span the first item ("Code") across both columns */
+         .skills-list li:first-child {
+            grid-column: 1 / -1;
+            margin-bottom: 5px; /* Optional: add a little breathing room below the top item */
+         }
+
+         .skills-list li {
+            position: relative;
+            padding-left: 20px;
+            font-family: var(--font-mono);
+            font-size: 13px;
+         }
+
+         .skills-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+         }
+         /* --------------------------------------------------------- */
+
+         /* --- EXPERIENCE (Timeline) --- */
+         .job-tabs {
+            border-left: 2px solid #233554;
+            margin-left: 20px;
+            padding-left: 20px;
+         }
+
+         .job-card {
+            position: relative;
+            margin-bottom: 40px;
+         }
+
+         .job-card::before {
+            content: "";
+            position: absolute;
+            left: -27px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--bg-dark);
+            border: 2px solid var(--accent);
+            transition: var(--trans);
+         }
+
+         .job-card:hover::before {
+            background: var(--accent);
+         }
+
+         .job-card h3 {
+            margin-bottom: 5px;
+            font-size: 20px;
+         }
+
+         .job-card .company {
+            color: var(--accent);
+         }
+
+         .job-card .range {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            display: block;
+         }
+
+         .job-card ul {
+            list-style: none;
+            padding: 0;
+         }
+
+         .job-card li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            font-size: 15px;
+         }
+
+         .job-card li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+         }
+
+         /* --- PROJECTS --- */
+         .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+         }
+
+         .project-card {
+            background-color: var(--bg-light);
+            padding: 2rem 1.75rem;
+            border-radius: 4px;
+            transition: var(--trans);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+         }
+
+         .project-card:hover {
+            transform: translateY(-7px);
+         }
+
+         .project-top {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 4px;
-        }
+            margin-bottom: 30px;
+         }
 
-        .job-title {
-            font-weight: 700;
-            font-size: 11pt;
-        }
-        
-        .project-link {
-            font-size: 0.9em;
-            margin-left: 8px;
-            color: var(--accent-color);
-            font-weight: 600;
-        }
+         .folder-icon {
+            color: var(--accent);
+            font-size: 40px;
+         }
+         .project-links a {
+            color: var(--text-main);
+            margin-left: 10px;
+         }
+         .project-links a:hover {
+            color: var(--accent);
+         }
 
-        .company {
-            font-weight: 600;
-            color: var(--text-gray);
-        }
+         .project-card h3 {
+            color: #e6f1ff;
+            font-size: 22px;
+         }
+         .project-card p {
+            font-size: 15px;
+            flex-grow: 1;
+         }
 
-        .date {
-            font-size: 9.5pt;
-            font-weight: 700;
-            color: var(--text-dark);
-            text-align: right;
-            white-space: nowrap;
-        }
+         .project-tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-muted);
+         }
 
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-            margin-bottom: 10px;
-        }
+         .project-tech-list li {
+            margin-right: 15px;
+         }
 
-        li {
-            margin-bottom: 4px;
-        }
+         /* --- CERTIFICATIONS (SWIPER) --- */
+         .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+         }
 
-        .skills-content {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
+         .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: auto;
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+         }
 
-        .no-print {
-            text-align: center;
+         .cert-img-wrapper {
+            width: 100%;
+            height: 200px;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #233554;
+         }
+
+         .cert-img-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+         }
+
+         .cert-info {
             padding: 20px;
-        }
-        
-        button {
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
+            text-align: center;
+         }
+
+         .cert-info h5 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #e6f1ff;
+         }
+         .cert-info p {
             font-size: 14px;
-        }
-        
-        button:hover { background-color: #003d82; }
+            color: var(--accent);
+            font-family: var(--font-mono);
+            margin: 0;
+         }
 
-        @media print {
-            body {
-                background: none;
-                -webkit-print-color-adjust: exact;
+         /* --- SKILLS PILLS --- */
+         #skillsList, #platformsList {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+         }
+
+         .skill-pill {
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            border-radius: 50px;
+            padding: 10px 20px; /* Updated for thicker pill look */
+            font-family: var(--font-mono);
+            font-size: 12px;
+            transition: var(--trans);
+            text-decoration: none;
+         }
+
+         .skill-pill:hover {
+            background-color: var(--accent-tint);
+         }
+
+         /* --- RESPONSIVE --- */
+         @media (max-width: 1080px) {
+            .hero {
+               padding: 0 100px;
             }
-            .page {
-                box-shadow: none;
-                margin: 0;
-                width: 100%;
-                padding: 0; 
+         }
+
+         @media (max-width: 768px) {
+            .hero {
+               padding: 0 50px;
             }
-            .no-print { display: none; }
-            a { text-decoration: none; color: black; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="no-print">
-        <button onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Download PDF</button>
-    </div>
-
-    <div class="page">
-        <header>
-            <h1>Kshitij Raut <span class="alias">(0x0z0n)</span></h1>
-            <div class="contact-info">
-                <span><i class="fa-solid fa-phone"></i> +91-9876543210</span>
-                <span><i class="fa-solid fa-envelope"></i> <a href="mailto:kshitijraut360@gmail.com">kshitijraut360@gmail.com</a></span>
-                <span><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra, India</span>
-                <span><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/kshitijnraut/" target="_blank">linkedin.com/in/kshitijnraut</a></span>
-                <span><i class="fa-brands fa-github"></i> <a href="https://github.com/0x0z0n" target="_blank">github.com/0x0z0n</a></span>
-                <span><i class="fa-solid fa-globe"></i> <a href="https://0x0z0n.github.io/Portfolio/" target="_blank">0x0z0n.github.io</a></span>
+            .section {
+               padding: 80px 20px;
+            }
+            .about-inner {
+               display: block;
+            }
+            .about-text {
+               margin-bottom: 40px;
+            }
+            .social-sidebar,
+            .email-sidebar {
+               display: none;
+            }
+            .navbar {
+               padding: 20px;
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-lg fixed-top">
+         <div class="container-fluid">
+            <a class="navbar-brand" href="#">0x0z0n</a>
+            <button
+               class="navbar-toggler"
+               type="button"
+               data-bs-toggle="collapse"
+               data-bs-target="#navbarNav"
+            >
+               <span class="fa fa-bars" style="color: var(--accent)"></span>
+            </button>
+            <div
+               class="collapse navbar-collapse justify-content-end"
+               id="navbarNav"
+            >
+               <ul class="navbar-nav">
+                  <li class="nav-item">
+                     <a class="nav-link" href="#about">About</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#experience">Experience</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#projects">Projects</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#certifications">Certs</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#skills-cloud">Skills</a>
+                  </li>
+                  <li class="nav-item">
+                     <a
+                        class="nav-link"
+                        href="https://0x0z0n.github.io/Research/"
+                        target="_blank"
+                        >Research</a
+                     >
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#contact">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                     <a
+                        class="btn-outline ms-3"
+                        href="assets/Kshitij_Raut.html"
+                        target="_blank"
+                        style="padding: 8px 16px; margin-top: 0"
+                        >Resume</a
+                     >
+                  </li>
+               </ul>
             </div>
-        </header>
+         </div>
+      </nav>
 
-        <section>
-            <h2 class="section-title">Professional Summary</h2>
-            <p>
-                Cybersecurity Analyst and Penetration Tester with 2+ years of continuous experience in Security Operations Center (SOC) environments and Offensive Security. Automates Incident Response (IR) pipelines using Python and executes targeted adversary simulations aligned with MITRE ATT&CK and OWASP frameworks. Currently transitioning to dedicated offensive security roles with a specialized focus on Windows Internals, Kernel Debugging, and C2 infrastructure deployment.
-            </p>
-        </section>
+      <div class="social-sidebar">
+         <ul>
+            <li>
+               <a href="https://github.com/0x0z0n" target="_blank"
+                  ><i class="fa-brands fa-github"></i
+               ></a>
+            </li>
+            <li>
+               <a
+                  href="https://www.linkedin.com/in/kshitijnraut/"
+                  target="_blank"
+                  ><i class="fa-brands fa-linkedin"></i
+               ></a>
+            </li>
+            <li>
+               <a href="https://tryhackme.com/p/0x0z0n" target="_blank"
+                  ><i class="fa-solid fa-terminal"></i
+               ></a>
+            </li>
+            <li>
+               <a
+                  href="https://app.hackthebox.com/public/users/1761906"
+                  target="_blank"
+                  ><i class="fa-solid fa-cube"></i
+               ></a>
+            </li>
+            <li>
+               <a href="https://0x0z0n.github.io/Research/" target="_blank"
+                  ><i class="fa-solid fa-book"></i
+               ></a>
+            </li>
+         </ul>
+      </div>
 
-        <section>
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-content">
-                <strong>Offensive Security & Red Teaming:</strong> Penetration Testing, Vulnerability Assessments (VAPT), C2 Frameworks, Active Directory Exploitation, Kernel Debugging, Windows Internals, Burp Suite, Metasploit, Kali Linux.<br>
-                <strong>Defensive Security & SOC:</strong> L2 SOC Operations, Incident Response (IR), Microsoft Sentinel, Chronicle SIEM, XDR / EDR, KQL, Threat Intelligence, Malware Analysis, Digital Forensics.<br>
-                <strong>Engineering & Development:</strong> Python, Rust, Bash, Assembly, Tauri, Docker, Kubernetes, DevSecOps, Git, REST APIs.<br>
-                <strong>AI & Frameworks:</strong> Machine Learning, Convolutional Neural Networks (CNN), TensorFlow, Pandas, Flask, MITRE ATT&CK, NIST, OWASP.
-            </div>
-        </section>
+      <div class="email-sidebar">
+         <div>
+            <a href="mailto:kshitijraut360@gmail.com"
+               >kshitijraut360@gmail.com</a
+            >
+         </div>
+      </div>
 
-        <section>
-            <h2 class="section-title">Professional Experience</h2>
+      <section class="hero">
+         <h1>Hello, World! I am</h1>
+         <h2>Kshitij Raut. <span class="alias-heartbeat">(0x0z0n)</span></h2>
+         <h3>Bridging Offensive Security & OPSec.</h3>
+                  <p>
+            Security Analyst specializing in SOC Operations, Incident Response,
+            and VAPT. Focused on improving security posture through automated
+            threat detection and adversary simulation.
+         </p>
+         <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <a href="#projects" class="btn-outline">View Projects</a>
+            <a href="https://0x0z0n.github.io/Research/" target="_blank" class="btn-outline">View Blog</a>
+         </div>
+      </section>
+      
 
-            <div class="experience-item">
-                <div class="job-header">
-                    <span class="job-title">Cybersecurity Analyst <span class="company">| Tata Consultancy Services (TCS)</span></span>
-                    <span class="date">March 2024 – Present</span>
-                </div>
-                <ul>
-                    <li>Manage L2 SOC Incident Response (IR) operations for P1 enterprise threats, maintaining 100% SLA compliance for triage and remediation.</li>
-                    <li>Resolve 50+ weekly complex security alerts via Microsoft Sentinel and XDR; map adversary behaviors to MITRE ATT&CK tactics to reduce Mean Time to Triage (MTTT).</li>
-                    <li>Execute penetration testing and red team simulations, identifying and patching critical infrastructure vulnerabilities to increase network compliance by 15%.</li>
-                    <li>Engineer Python automation scripts for log parsing and Threat Intelligence integration, eliminating manual IOC extraction and reducing false positive alert volume by 20%.</li>
-                    <li>Conduct endpoint forensics and deep malware analysis to isolate root causes and neutralize Advanced Persistent Threats (APTs).</li>
-                </ul>
-            </div>
-
-            <br>
-
-            <div class="experience-item">
-                <div class="job-header">
-                    <div>
-                        <span class="job-title">Cybersecurity & Forensics Intern <span class="company">| Cyber Secured India</span></span>
-                        <a href="https://drive.google.com/drive/folders/1yOQo9bXDMNMW0VY2qXeg-PsIlD_jG_Pj?usp=drive_link" target="_blank" class="project-link"><i class="fa-solid fa-folder-open"></i> View Docs</a>
-                    </div>
-                    <span class="date">December 2023 – March 2024</span>
-                </div>
-                <ul>
-                    <li>Executed digital forensic investigations utilizing memory forensics, log review, and strict evidence recovery protocols.</li>
-                    <li>Authored vulnerability assessment reports and incident mitigation strategies for senior technical stakeholders.</li>
-                    <li>Completed intensive hands-on operational training in proactive security monitoring and defensive SOC workflows.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <h2 class="section-title">Projects</h2>
-            
-            <div class="project-header">
-                <div>
-                    <span class="job-title">OVERRIDE PROTOCOL (z0n GPU Profiler) | <span class="company">Rust, Tauri, Linux</span></span>
-                    <a href="https://github.com/0x0z0n/GPU-Profiler" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> View Code</a>
-                </div>
-                <span class="date">January 2026 – March 2026</span>
-            </div>
-            <ul>
-                <li>Engineered a bare-metal hardware orchestration dashboard (v0.1.1) in Rust and Tauri, customized for Linux systems.</li>
-                <li>Optimized NVIDIA PRIME offloading to deliver real-time system telemetry and concurrent dual-module GUI/CLI execution without input latency.</li>
-            </ul>
-
-            <div class="project-header" style="margin-top: 10px;">
-                <div>
-                    <span class="job-title">Automated Threat Intelligence Scanner | <span class="company">Python, REST APIs</span></span>
-                    <a href="https://github.com/0x0z0n/Threat-Intel-HASH-Conversion" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> View Code</a>
-                </div>
-                <span class="date">August 2025 – November 2025</span>
-            </div>
-            <ul>
-                <li>Developed an automated SOC triage tool utilizing Python to bulk-scan IOCs (File Hashes) against multi-source Threat Intelligence platforms.</li>
-                <li>Programmed API rate-limiting logic and automated PDF reporting pipelines to bypass manual triage bottlenecks.</li>
-            </ul>
-
-            <div class="project-header" style="margin-top: 10px;">
-                <div>
-                    <span class="job-title">Security Knowledge Base | <span class="company">Jekyll, Markdown, GitHub Pages</span></span>
-                    <a href="https://0x0z0n.github.io/Blog/" target="_blank" class="project-link"><i class="fa-solid fa-link"></i> View Site</a>
-                </div>
-                <span class="date">June 2025 – Present</span>
-            </div>
-            <ul>
-                <li>Developed a comprehensive personal blog using Jekyll and GitHub Pages to publish advanced CTF walkthroughs and Red Teaming cheatsheets.</li>
-                <li>Established a centralized public repository for documenting and sharing penetration testing methodologies and active directory exploits.</li>
-            </ul>
-
-            <div class="project-header" style="margin-top: 10px;">
-                <div>
-                    <span class="job-title">CropVision AI & Application Security | <span class="company">TensorFlow, Flask</span></span>
-                    <a href="https://github.com/0x0z0n/CropVision" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> View Code</a>
-                    <a href="https://drive.google.com/file/d/16LyoDLcKa0dHhaDAt3ljQvsNEtKTzfR8/view" target="_blank" class="project-link"><i class="fa-solid fa-file-pdf"></i> View Paper</a>
-                </div>
-                <span class="date">January 2025 – May 2025</span>
-            </div>
-            <ul>
-                <li>Built a Flask web application utilizing Convolutional Neural Networks (CNNs) and Machine Learning to detect agricultural anomalies, achieving verified 95% accuracy.</li> 
-                <li>Executed adversarial penetration testing to remediate a critical RCE vulnerability via deep content inspection and Magic Number verification.</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2 class="section-title">Education & Certifications</h2>
-            
-            <div class="job-header">
-                <span class="job-title">Bachelor of Engineering in Computer Science & Data Science</span>
-                <span class="date">August 2019 – May 2023</span>
-            </div>
-            <div class="company" style="margin-bottom: 10px;">Sant Gadge Baba Amravati University | CGPA: 9.16</div>
-
-            <ul>
-                <li><strong>Certifications:</strong> Microsoft Security Operations Analyst (SC-200), <a href="https://0x0z0n.github.io/Portfolio/Cert/Digital_Forensics.png" target="_blank">Digital Forensics</a> (Uttarakhand Open University).</li>
-                <li><strong>Advanced Security Training:</strong> Currently executing a 20-day practical track in Windows Internals and Kernel Debugging; Completed <a href="https://drive.google.com/file/d/1HFhcKJ5uvuaHyvRTTgnKsjLNZGAreesu/view?usp=drivesdk" target="_blank">T7 Cybersecurity Track</a> with Distinction.</li>
-                <li><strong>Global Competitions:</strong> Achieved "Pro Hacker" rank on <a href="https://app.hackthebox.com/public/users/1761906" target="_blank">HackTheBox</a> and ranked in the Top 5% globally on <a href="https://tryhackme.com/p/0x0z0n" target="_blank">TryHackMe</a>.</li>
-            </ul>
-        </section>
-
-    </div>
-
-</body>
-</html>
-
+      <section id="about">
+         <h2 class="section-title">About Me</h2>
+         <div class="about-inner">
+            <div class="about-text">
+               <p>
+                  Securing enterprise infrastructure, My journey in
+                  cybersecurity began with curiosity about network protocols,
+                  leading me to specialize in
+                  <span style="color: var(--accent)">Threat Hunting</span> and
+                  <span style="color: var(--accent)"
+                     >Vulnerability Assessment</span
+                  >.
+               </p>
+               <p>
+                  Currently, I leverage my experience at <a href="#">TCS</a> to
+         
