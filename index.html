@@ -1172,7 +1172,7 @@
                      if (excludeFromSkills.includes(cat)) return;
 
                      const link = document.createElement("a");
-                     link.href = `https://0x0z0n.github.io/Research/index.html?search=${encodeURIComponent(cat)}`;
+                     link.href = `https://0x0z0n.github.io/Research/index.html?search="${encodeURIComponent(cat)}"`;
                      link.target = "_blank";
                      link.className = "skill-pill";
                      link.style.padding = "10px 20px"; // Match the thicker pill size
