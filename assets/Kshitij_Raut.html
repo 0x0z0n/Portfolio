@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,8 +34,9 @@
             background: white;
             width: 210mm;
             min-height: 297mm;
+            max-width: 210mm;
             margin: 20px auto;
-            padding: 40px 50px;
+            padding: 14mm 12mm;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
@@ -191,14 +191,21 @@
         button:hover { background-color: #003d82; }
 
         @media print {
+            @page {
+                size: A4;
+                margin: 14mm 12mm;
+            }
             body {
                 background: none;
                 -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                font-size: 10pt;
             }
             .page {
                 box-shadow: none;
                 margin: 0;
                 width: 100%;
+                min-height: 0;
                 padding: 0;
             }
             .no-print { display: none; }
@@ -208,6 +215,12 @@
                 background: none;
                 color: #000;
             }
+            section { margin-bottom: 14px; }
+            .experience-item, .project-header, .job-header {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            h2.section-title { page-break-after: avoid; }
         }
     </style>
 </head>
@@ -221,7 +234,7 @@
         <header>
             <h1>Kshitij Raut <span class="alias">(0x0z0n)</span></h1>
             <div class="contact-info">
-                <span>+91-9876543210</span>
+                <span>+91-9325094085</span>
                 <span><a href="mailto:kshitijraut360@gmail.com">kshitijraut360@gmail.com</a></span>
                 <span>Pune, Maharashtra, India</span>
                 <span><a href="https://www.linkedin.com/in/kshitijnraut/" target="_blank">linkedin.com/in/kshitijnraut</a></span>
@@ -238,7 +251,7 @@
         <section>
             <h2 class="section-title">Professional Summary</h2>
             <p>
-                Cybersecurity Analyst and Penetration Tester (HackTheBox "Pro Hacker," Top 5% globally on TryHackMe) with 2+ years across SOC Incident Response and Offensive Security. Builds Python automation that cuts false-positive alert volume and runs red team simulations mapped to MITRE ATT&CK and OWASP. Now pursuing dedicated offensive security roles, with hands-on depth in Windows Internals, Kernel Debugging, Active Directory exploitation, and C2 infrastructure across AWS/Azure environments.
+                Cybersecurity Analyst and Penetration Tester (HackTheBox "Pro Hacker") with 2+ years across SOC Incident Response and Offensive Security. Builds Python automation that cuts false-positive alert volume and runs red team simulations mapped to MITRE ATT&CK and OWASP. Now pursuing dedicated offensive security roles, with hands-on depth in Windows Internals, Kernel Debugging, Active Directory exploitation, and C2 infrastructure across AWS/Azure environments.
             </p>
         </section>
 
@@ -363,9 +376,9 @@
             <div class="company" style="margin-bottom: 10px;">Sant Gadge Baba Amravati University | CGPA: 9.16</div>
 
             <ul>
-                <li><strong>Certifications:</strong> Microsoft Security Operations Analyst (SC-200), <a href="https://0x0z0n.github.io/Portfolio/Cert/Digital_Forensics.png" target="_blank">Digital Forensics</a> (Uttarakhand Open University), Deep Learning (DeepLearning.AI).</li>
+                <li><strong>Certifications:</strong> <a href="https://0x0z0n.github.io/Portfolio/Cert/Digital_Forensics.png" target="_blank">Digital Forensics</a> (Uttarakhand Open University), Deep Learning (DeepLearning.AI).</li>
                 <li><strong>Advanced Security Training:</strong> Completed <a href="https://drive.google.com/file/d/1HFhcKJ5uvuaHyvRTTgnKsjLNZGAreesu/view?usp=drivesdk" target="_blank">T7 Cybersecurity Track</a> with Distinction; hands-on penetration testing simulations across Web, Mobile, DevSecOps, Network, Forensics, and Cloud Security.</li>
-                <li><strong>Global Competitions & Labs:</strong> Cleared the <strong>Mythical Pro Lab (Advanced)</strong> on HackTheBox; achieved "Pro Hacker" rank and Top 5% global standing on <a href="https://tryhackme.com/p/0x0z0n" target="_blank">TryHackMe</a>; ranked <strong>#30 globally</strong> in the <a href="https://www.cloudsecuritychampionship.com/certificate/cloudchampions/a60a8bea-ce0a-4979-9fd4-d724f310769e" target="_blank">Wiz Cloud Security Championship</a> CTF.</li>
+                <li><strong>Global Competitions & Labs:</strong> Achieved <a href="https://app.hackthebox.com/public/users/1761906" target="_blank">"Pro Hacker" rank</a> on HackTheBox; ranked <strong>#30 globally</strong> in the <a href="https://www.cloudsecuritychampionship.com/certificate/cloudchampions/a60a8bea-ce0a-4979-9fd4-d724f310769e" target="_blank">Wiz Cloud Security Championship</a> CTF.</li>
             </ul>
         </section>
 
