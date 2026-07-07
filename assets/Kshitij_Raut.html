@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,9 +49,35 @@
         a:hover { text-decoration: underline; }
 
         header {
-            border-bottom: 2px solid #eee;
+            position: relative;
             padding-bottom: 16px;
+            padding-right: 100px;
             margin-bottom: 12px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .portfolio-qr {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 82px;
+            text-align: center;
+        }
+
+        .portfolio-qr img,
+        .portfolio-qr canvas {
+            width: 78px;
+            height: 78px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .portfolio-qr span {
+            display: block;
+            font-size: 7pt;
+            color: var(--text-gray);
+            margin-top: 3px;
+            letter-spacing: 0.3px;
         }
 
         h1 {
@@ -232,6 +259,12 @@
 
     <div class="page">
         <header>
+            <div class="portfolio-qr">
+                <a href="https://0x0z0n.github.io/Portfolio/" target="_blank">
+                    <div id="qr-canvas"></div>
+                </a>
+                <span>Portfolio</span>
+            </div>
             <h1>Kshitij Raut <span class="alias">(0x0z0n)</span></h1>
             <div class="contact-info">
                 <span>+91-9325094085</span>
@@ -383,6 +416,18 @@
         </section>
 
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        new QRCode(document.getElementById("qr-canvas"), {
+            text: "https://0x0z0n.github.io/Portfolio/",
+            width: 78,
+            height: 78,
+            colorDark: "#1a1a1a",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.M
+        });
+    </script>
 
 </body>
 </html>
