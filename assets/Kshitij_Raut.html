@@ -2,431 +2,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kshitij Raut - Resume</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --text-dark: #1a1a1a;
-            --text-gray: #555;
-            --accent-color: #0056b3;
-            --bg-color: #ffffff;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-            color: var(--text-dark);
-            line-height: 1.5;
-            font-size: 10.5pt;
-        }
-
-        .page {
-            background: white;
-            width: 210mm;
-            min-height: 297mm;
-            max-width: 210mm;
-            margin: 20px auto;
-            padding: 14mm 12mm;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
-        a:hover { text-decoration: underline; }
-
-        header {
-            position: relative;
-            padding-bottom: 16px;
-            padding-right: 100px;
-            margin-bottom: 12px;
-            border-bottom: 2px solid #eee;
-        }
-
-        .portfolio-qr {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 82px;
-            text-align: center;
-        }
-
-        .portfolio-qr img,
-        .portfolio-qr canvas {
-            width: 78px;
-            height: 78px;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .portfolio-qr span {
-            display: block;
-            font-size: 7pt;
-            color: var(--text-gray);
-            margin-top: 3px;
-            letter-spacing: 0.3px;
-        }
-
-        h1 {
-            font-size: 24pt;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        .alias {
-            font-family: 'Courier New', monospace;
-            font-size: 14pt;
-            color: var(--text-gray);
-            font-weight: normal;
-            text-transform: none;
-        }
-
-        .contact-info {
-            font-size: 9.5pt;
-            color: var(--text-gray);
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .contact-info span {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            color: var(--text-dark);
-        }
-
-        /* Credibility strip: the "10-second scan" proof points, front and center */
-        .credibility-strip {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .credibility-strip span {
-            background: #eef4ff;
-            color: var(--accent-color);
-            border: 1px solid #cfe0ff;
-            border-radius: 4px;
-            padding: 4px 10px;
-            font-size: 9pt;
-            font-weight: 700;
-            letter-spacing: 0.2px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        section {
-            margin-bottom: 20px;
-        }
-
-        h2.section-title {
-            font-size: 11pt;
-            text-transform: uppercase;
-            border-bottom: 1px solid #000;
-            margin-bottom: 12px;
-            padding-bottom: 3px;
-            letter-spacing: 1px;
-            font-weight: 700;
-        }
-
-        .job-header, .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 4px;
-        }
-
-        .job-title {
-            font-weight: 700;
-            font-size: 11pt;
-        }
-
-        .project-link {
-            font-size: 0.9em;
-            margin-left: 8px;
-            color: var(--accent-color);
-            font-weight: 600;
-        }
-
-        .company {
-            font-weight: 600;
-            color: var(--text-gray);
-        }
-
-        .date {
-            font-size: 9.5pt;
-            font-weight: 700;
-            color: var(--text-dark);
-            text-align: right;
-            white-space: nowrap;
-        }
-
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-            margin-bottom: 10px;
-        }
-
-        li {
-            margin-bottom: 4px;
-        }
-
-        li .metric {
-            font-weight: 700;
-            color: var(--accent-color);
-        }
-
-        .skills-content {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-
-        .no-print {
-            text-align: center;
-            padding: 20px;
-        }
-
-        button {
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        button:hover { background-color: #003d82; }
-
-        @media print {
-            @page {
-                size: A4;
-                margin: 14mm 12mm;
-            }
-            body {
-                background: none;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-                font-size: 10pt;
-            }
-            .page {
-                box-shadow: none;
-                margin: 0;
-                width: 100%;
-                min-height: 0;
-                padding: 0;
-            }
-            .no-print { display: none; }
-            a { text-decoration: none; color: black; }
-            .credibility-strip span {
-                border: 1px solid #999;
-                background: none;
-                color: #000;
-            }
-            section { margin-bottom: 14px; }
-            .experience-item, .project-header, .job-header {
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-            h2.section-title { page-break-after: avoid; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kshitij Raut - Resume</title>
+<style>
+  body{font-family:Calibri,Arial,sans-serif;font-size:10.5pt;line-height:1.35;color:#000;background:#eee;margin:0}
+  .bar{text-align:center;padding:14px}
+  button{font:600 14px Arial,sans-serif;padding:10px 22px;border:0;border-radius:5px;background:#0b5394;color:#fff;cursor:pointer}
+  .page{background:#fff;width:210mm;max-width:100%;margin:0 auto 20px;padding:14mm 15mm;box-sizing:border-box}
+  h1{font-size:20pt;margin:0;text-align:center;letter-spacing:.5px}
+  .role{text-align:center;font-weight:700;margin:2px 0}
+  .contact{text-align:center;font-size:9.5pt;margin:1px 0}
+  a{color:#000;text-decoration:none}
+  a:hover{text-decoration:underline}
+  h2{font-size:12pt;text-transform:uppercase;border-bottom:1px solid #000;margin:12px 0 5px;padding-bottom:2px}
+  .row{display:flex;justify-content:space-between;gap:10px;font-weight:700;margin-top:6px}
+  .row span:last-child{white-space:nowrap}
+  ul{margin:2px 0 4px;padding-left:18px}
+  li{margin-bottom:2px}
+  p{margin:2px 0}
+  @media print{
+    @page{size:A4;margin:12mm}
+    body{background:#fff}
+    .bar{display:none}
+    .page{width:auto;margin:0;padding:0}
+    h2,.row{break-after:avoid}
+    li{break-inside:avoid}
+  }
+</style>
 </head>
 <body>
+<div class="bar"><button onclick="window.print()">Download as PDF</button></div>
+<div class="page">
 
-    <div class="no-print">
-        <button onclick="window.print()">Print / Download PDF</button>
-    </div>
+<h1>KSHITIJ RAUT</h1>
+<div class="role">SOC Analyst (L2) | Penetration Tester</div>
+<div class="contact">Pune, Maharashtra | +91-9325094085 | <a href="mailto:kshitijraut360@gmail.com">kshitijraut360@gmail.com</a></div>
+<div class="contact">LinkedIn: <a href="https://www.linkedin.com/in/kshitijnraut/">linkedin.com/in/kshitijnraut</a> | Portfolio: <a href="https://0x0z0n.github.io/Portfolio/">0x0z0n.github.io/Portfolio</a> | GitHub: <a href="https://github.com/0x0z0n">github.com/0x0z0n</a></div>
+<div class="contact">HackTheBox: <a href="https://app.hackthebox.com/public/users/1761906">app.hackthebox.com/public/users/1761906</a> | TryHackMe: <a href="https://tryhackme.com/p/0x0z0n">tryhackme.com/p/0x0z0n</a></div>
 
-    <div class="page">
-        <header>
-            <div class="portfolio-qr">
-                <a href="https://0x0z0n.github.io/Portfolio/" target="_blank">
-                    <div id="qr-canvas"></div>
-                </a>
-                <span>Portfolio</span>
-            </div>
-            <h1>Kshitij Raut <span class="alias">(0x0z0n)</span></h1>
-            <div class="contact-info">
-                <span>+91-9325094085</span>
-                <span><a href="mailto:kshitijraut360@gmail.com">kshitijraut360@gmail.com</a></span>
-                <span>Pune, Maharashtra, India</span>
-                <span><a href="https://www.linkedin.com/in/kshitijnraut/" target="_blank">linkedin.com/in/kshitijnraut</a></span>
-                <span><a href="https://0x0z0n.github.io/Portfolio/" target="_blank">0x0z0n.github.io</a></span>
-            </div>
-            <!-- Front-loaded proof points so the strongest signals survive a 6-10 second scan -->
-            <div class="credibility-strip">
-                <span><a href="https://app.hackthebox.com/public/users/1761906" target="_blank">HackTheBox "Pro Hacker" Rank</a></span>
-                <span><a href="https://www.cloudsecuritychampionship.com/certificate/cloudchampions/a60a8bea-ce0a-4979-9fd4-d724f310769e" target="_blank">Global Rank #30 - Wiz Cloud Security CTF</a></span>
-            </div>
-        </header>
+<h2>Professional Summary</h2>
+<ul>
+<li>2+ years of experience in cybersecurity across L2 SOC incident response and offensive security (VAPT, red teaming).</li>
+<li>Skilled in incident response, penetration testing, threat detection and Python security automation.</li>
+<li>Experience triaging SIEM/XDR alerts, running red team simulations mapped to MITRE ATT&amp;CK and OWASP, and forensic analysis.</li>
+<li>Known for accuracy, SLA discipline and documenting attack chains; HackTheBox "Pro Hacker" and Wiz Cloud Security Championship rank #30.</li>
+</ul>
 
-        <section>
-            <h2 class="section-title">Professional Summary</h2>
-            <p>
-                Cybersecurity Analyst and Penetration Tester (HackTheBox "Pro Hacker") with 2+ years across SOC Incident Response and Offensive Security. Builds Python automation that cuts false-positive alert volume and runs red team simulations mapped to MITRE ATT&CK and OWASP. Now pursuing dedicated offensive security roles, with hands-on depth in Windows Internals, Kernel Debugging, Active Directory exploitation, and C2 infrastructure across AWS/Azure environments.
-            </p>
-        </section>
+<h2>Key Skills</h2>
+<ul>
+<li>Penetration Testing | VAPT | Red Teaming | Active Directory Exploitation | Incident Response | Malware Analysis | Digital Forensics | Windows Internals | Kernel Debugging | C2 Frameworks | DevSecOps | Machine Learning</li>
+<li>Microsoft Sentinel | Splunk | Chronicle SIEM | SentinelOne | Cortex | Defender | KQL | Burp Suite | Metasploit | Kali Linux | BloodHound | LOLBAS | GTFOBins | Docker | Kubernetes | AWS | Azure | Git | REST APIs | TensorFlow | Pandas | Flask</li>
+<li>Python | Rust | C | JavaScript | Bash | Assembly | MITRE ATT&amp;CK | NIST | OWASP</li>
+</ul>
 
-        <section>
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-content">
-                <strong>Offensive Security & Red Teaming:</strong> Penetration Testing, Vulnerability Assessments (VAPT), C2 Frameworks, Active Directory Exploitation, Kernel Debugging, Windows Internals, Burp Suite, Metasploit, Kali Linux.<br>
-                <strong>Defensive Security & SOC:</strong> L2 SOC Operations, Incident Response (IR), Microsoft Sentinel, Splunk, Chronicle SIEM, XDR (SentinelOne, Cortex, Defender), KQL, Malware Analysis, Digital Forensics.<br>
-                <strong>Engineering & Cloud:</strong> Python, Rust, C, JavaScript, Bash, Assembly, Docker, Kubernetes, DevSecOps, AWS, Azure, Git, REST APIs.<br>
-                <strong>AI & Frameworks:</strong> Machine Learning, Convolutional Neural Networks (CNN), TensorFlow, Pandas, Flask, MITRE ATT&CK, NIST, OWASP.
-            </div>
-        </section>
+<h2>Work Experience</h2>
+<div class="row"><span>Cybersecurity Analyst (L2 SOC) | Tata Consultancy Services (TCS)</span><span>March 2024 – Present</span></div>
+<ul>
+<li>Maintained 100% SLA compliance in L2 SOC incident response for P1 enterprise threats, with zero missed critical escalations.</li>
+<li>Triaged 50+ alerts weekly using Microsoft Sentinel, Splunk and XDR (SentinelOne, Cortex), mapping adversary behavior to MITRE ATT&amp;CK to cut Mean Time to Triage.</li>
+<li>Ran penetration tests and red team simulations on AWS/Azure infrastructure, closing critical gaps and improving compliance by 15%.</li>
+<li>Built Python automation for log parsing and threat intel integration, removing manual IOC extraction and cutting false positives by 20%.</li>
+<li>Led endpoint forensics and malware analysis to identify root causes and neutralize APTs in hybrid environments.</li>
+<li>Prepared incident reports and collaborated with IT/DevOps teams to strengthen security posture.</li>
+</ul>
 
-        <section>
-            <h2 class="section-title">Professional Experience</h2>
+<h2>Internships and Projects</h2>
+<div class="row"><span>Cybersecurity &amp; Digital Forensics Intern | Cyber Secured India</span><span>December 2023 – March 2024</span></div>
+<ul>
+<li>Conducted digital forensic investigations using memory forensics, log review and chain-of-custody evidence recovery.</li>
+<li>Authored vulnerability assessment reports and mitigation strategies for senior technical stakeholders.</li>
+<li>Completed 36+ hrs/week of hands-on training in malware analysis, log investigation and defensive SOC workflows. <a href="https://drive.google.com/drive/folders/1yOQo9bXDMNMW0VY2qXeg-PsIlD_jG_Pj?usp=drive_link">Docs: drive.google.com/…/1yOQo9bXDMNMW0VY2qXeg-PsIlD_jG_Pj</a></li>
+</ul>
 
-            <div class="experience-item">
-                <div class="job-header">
-                    <span class="job-title">Cybersecurity Analyst <span class="company">| Tata Consultancy Services (TCS)</span></span>
-                    <span class="date">March 2024 – Present</span>
-                </div>
-                <ul>
-                    <li>Maintain <span class="metric">100% SLA compliance</span> across L2 SOC Incident Response for P1 enterprise threats, with zero missed critical escalations.</li>
-                    <li>Triage <span class="metric">50+ alerts weekly</span> via Microsoft Sentinel, Splunk, and multi-platform XDR (SentinelOne, Cortex), mapping adversary behavior to MITRE ATT&CK to cut Mean Time to Triage.</li>
-                    <li>Run penetration tests and red team simulations against AWS/Azure infrastructure, closing critical gaps that lifted network compliance by <span class="metric">15%</span>.</li>
-                    <li>Built Python automation for log parsing and Threat Intel integration, removing manual IOC extraction and cutting false-positive alert volume by <span class="metric">20%</span>.</li>
-                    <li>Lead endpoint forensics and malware analysis engagements to isolate root cause and neutralize Advanced Persistent Threats (APTs) in hybrid environments.</li>
-                </ul>
-            </div>
+<div class="row"><span>Cloud Security Championship – Wiz CTF (AWS, Kubernetes, CI/CD, IAM)</span><span>2026</span></div>
+<ul>
+<li>Solved all 12 real-world attack scenarios, ranking #30 globally across AWS misconfigurations, Kubernetes privilege escalation, CI/CD compromise and IAM exploitation.</li>
+<li>Documented full attack chains and defensive mitigations as a public research reference.</li>
+<li>Links: <a href="https://www.cloudsecuritychampionship.com/certificate/cloudchampions/a60a8bea-ce0a-4979-9fd4-d724f310769e">Certificate</a> | <a href="https://0x0z0n.github.io/Research/index.html?search=Wiz">Documentation: 0x0z0n.github.io/Research</a></li>
+</ul>
 
-            <br>
+<div class="row"><span>z0n GPU Profiler / Override Protocol (Rust, Tauri, Python, CustomTkinter, NVIDIA-SMI, Bash)</span><span>Jan 2026 – Mar 2026</span></div>
+<ul>
+<li>Shipped a hardware orchestration dashboard (v0.1.1) for Linux with real-time telemetry and dual-module GUI/CLI execution.</li>
+<li>Tuned NVIDIA PRIME offloading to eliminate input latency during concurrent GPU monitoring.</li>
+<li>Code: <a href="https://github.com/0x0z0n/GPU-Profiler">github.com/0x0z0n/GPU-Profiler</a> | Write-up: <a href="https://0x0z0n.github.io/Research/posts/GPU_Profiler/">0x0z0n.github.io/Research/posts/GPU_Profiler</a></li>
+</ul>
 
-            <div class="experience-item">
-                <div class="job-header">
-                    <div>
-                        <span class="job-title">Cybersecurity & Forensics Intern <span class="company">| Cyber Secured India</span></span>
-                        <a href="https://drive.google.com/drive/folders/1yOQo9bXDMNMW0VY2qXeg-PsIlD_jG_Pj?usp=drive_link" target="_blank" class="project-link">View Docs</a>
-                    </div>
-                    <span class="date">December 2023 – March 2024</span>
-                </div>
-                <ul>
-                    <li>Ran digital forensic investigations combining memory forensics, log review, and chain-of-custody evidence recovery.</li>
-                    <li>Authored vulnerability assessment reports and mitigation strategies presented directly to senior technical stakeholders.</li>
-                    <li>Completed intensive hands-on training in proactive security monitoring and defensive SOC workflows.</li>
-                </ul>
-            </div>
-        </section>
+<div class="row"><span>Automated Threat Intelligence Scanner (Python, Pandas, REST APIs)</span><span>Aug 2025 – Nov 2025</span></div>
+<ul>
+<li>Built a SOC triage tool that bulk-scans file-hash IOCs against multi-source threat intelligence platforms.</li>
+<li>Added API rate limiting and automated Excel reporting, removing a manual triage bottleneck from the IR workflow.</li>
+<li>Code: <a href="https://github.com/0x0z0n/Threat-Intel-HASH-Conversion">github.com/0x0z0n/Threat-Intel-HASH-Conversion</a></li>
+</ul>
 
-        <section>
-            <h2 class="section-title">Projects</h2>
+<div class="row"><span>Security Knowledge Base (Jekyll, Markdown, JavaScript)</span><span>June 2025 – Present</span></div>
+<ul>
+<li>Publish CTF walkthroughs, red teaming cheatsheets and Active Directory exploitation techniques on a public GitHub Pages site.</li>
+<li>Site: <a href="https://0x0z0n.github.io/Blog/">0x0z0n.github.io/Blog</a> | <a href="https://0x0z0n.github.io/Research/">0x0z0n.github.io/Research</a></li>
+</ul>
 
-            <div class="project-header">
-                <div>
-                    <span class="job-title">Cloud Security Championship - Wiz CTF Attack Chains | <span class="company">AWS, Kubernetes, CI/CD, IAM</span></span>
-                    <a href="https://www.cloudsecuritychampionship.com/certificate/cloudchampions/a60a8bea-ce0a-4979-9fd4-d724f310769e" target="_blank" class="project-link">View Cert</a>
-                    <a href="https://0x0z0n.github.io/Research/index.html?search=Wiz" target="_blank" class="project-link">View Documentation</a>
-                </div>
-                <span class="date">2026</span>
-            </div>
-            <ul>
-                <li>Solved all 12 real-world attack scenarios in the Wiz Cloud Security Championship CTF, ranking <span class="metric">#30 globally</span>, spanning AWS misconfigurations, Kubernetes privilege escalation, CI/CD pipeline compromise, and IAM exploitation.</li>
-                <li>Documented full attack chains and corresponding defensive mitigations for each challenge, published as a public research reference.</li>
-            </ul>
+<div class="row"><span>CropVision AI &amp; Application Security (TensorFlow, Flask, CNN)</span><span>Jan 2025 – May 2025</span></div>
+<ul>
+<li>Built a Flask and CNN web application detecting agricultural anomalies with 87–95% accuracy.</li>
+<li>Found and fixed a critical file-upload-to-RCE vulnerability via adversarial testing, adding magic-number verification and deep content inspection to close a MIME-spoofing gap.</li>
+<li>Links: <a href="https://github.com/0x0z0n/CropVision">Code: github.com/0x0z0n/CropVision</a> | <a href="https://drive.google.com/file/d/16LyoDLcKa0dHhaDAt3ljQvsNEtKTzfR8/view">Paper</a> | <a href="https://0x0z0n.github.io/Research/posts/CropVision/">Write-up</a></li>
+</ul>
 
-            <div class="project-header" style="margin-top: 10px;">
-                <div>
-                    <span class="job-title">OVERRIDE PROTOCOL (z0n GPU Profiler) | <span class="company">Rust, Tauri, Linux</span></span>
-                    <a href="https://github.com/0x0z0n/GPU-Profiler" target="_blank" class="project-link">View Code</a>
-                </div>
-                <span class="date">January 2026 – March 2026</span>
-            </div>
-            <ul>
-                <li>Shipped a bare-metal hardware orchestration dashboard (v0.1.1) in Rust and Tauri for Linux, with real-time telemetry and dual-module GUI/CLI execution.</li>
-                <li>Tuned NVIDIA PRIME offloading to eliminate input latency during concurrent GPU monitoring sessions.</li>
-            </ul>
+<h2>Education</h2>
+<p><strong>Bachelor of Engineering in Computer Science &amp; Data Science</strong></p>
+<p>Sant Gadge Baba Amravati University</p>
+<p>August 2019 – May 2023</p>
+<ul><li>CGPA: 9.16</li></ul>
 
-            <div class="project-header" style="margin-top: 10px;">
-                <div>
-                    <span class="job-title">Automated Threat Intelligence Scanner | <span class="company">Python, REST APIs</span></span>
-                    <a href="https://github.com/0x0z0n/Threat-Intel-HASH-Conversion" target="_blank" class="project-link">View Code</a>
-                </div>
-                <span class="date">August 2025 – November 2025</span>
-            </div>
-            <ul>
-                <li>Built a Python SOC triage tool that bulk-scans file-hash IOCs against multi-source Threat Intelligence platforms.</li>
-                <li>Added API rate-limiting logic and automated Excel reporting, removing a manual triage bottleneck from the IR workflow.</li>
-            </ul>
+<h2>Certifications and Training</h2>
+<ul>
+<li>Mythical Pro Lab (Advanced) – HackTheBox – 2025</li>
+<li>T7 Cybersecurity Track (with Distinction) – 2024 – <a href="https://drive.google.com/file/d/1HFhcKJ5uvuaHyvRTTgnKsjLNZGAreesu/view?usp=drivesdk">Certificate</a></li>
+<li>Advent of Cyber 2021, 2022, 2023, 2024, 2025 – TryHackMe</li>
+<li>Cyber Hygiene Practices – MeitY – 2022</li>
+<li>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization – DeepLearning.AI (Coursera) – 2022 – <a href="https://coursera.org/verify/X4NYG68TDS3Q">coursera.org/verify/X4NYG68TDS3Q</a></li>
+<li>Digital Forensics (4-week online programme) – Uttarakhand Open University with CEMCA – 2021 – <a href="https://0x0z0n.github.io/Portfolio/Cert/Digital_Forensics.png">Certificate</a></li>
+</ul>
 
-            <div class="project-header" style="margin-top: 10px;">
-                <div>
-                    <span class="job-title">Security Knowledge Base | <span class="company">Jekyll, Markdown, JS</span></span>
-                    <a href="https://0x0z0n.github.io/Blog/" target="_blank" class="project-link">View Site</a>
-                </div>
-                <span class="date">June 2025 – Present</span>
-            </div>
-            <ul>
-                <li>Publish advanced CTF walkthroughs and red teaming cheatsheets via a Jekyll site hosted on GitHub Pages.</li>
-                <li>Maintain a public repository documenting penetration testing methodologies and Active Directory exploitation techniques.</li>
-            </ul>
+<h2>Achievements / Positions of Responsibility</h2>
+<ul>
+<li><a href="https://app.hackthebox.com/public/users/1761906">HackTheBox "Pro Hacker" rank</a> – earned through hands-on penetration testing labs.</li>
+<li><a href="https://www.cloudsecuritychampionship.com/certificate/cloudchampions/a60a8bea-ce0a-4979-9fd4-d724f310769e">Wiz Cloud Security Championship</a> – Global Rank #30, all 12 scenarios solved (2026).</li>
+<li>HackTheBox Holmes CTF 2026 – ranked 152nd of 5,637 teams, solved 111/111 challenges, 8,725 points (17–21 Sep 2026).</li>
+</ul>
 
-            <div class="project-header" style="margin-top: 10px;">
-                <div>
-                    <span class="job-title">CropVision AI & Application Security | <span class="company">TensorFlow, Flask</span></span>
-                    <a href="https://github.com/0x0z0n/CropVision" target="_blank" class="project-link">View Code</a>
-                    <a href="https://drive.google.com/file/d/16LyoDLcKa0dHhaDAt3ljQvsNEtKTzfR8/view" target="_blank" class="project-link">View Paper</a>
-                </div>
-                <span class="date">January 2025 – May 2025</span>
-            </div>
-            <ul>
-                <li>Built a Flask + CNN web application detecting agricultural anomalies with <span class="metric">95% accuracy</span>.</li>
-                <li>Found and remediated a critical file-upload-to-RCE vulnerability via adversarial testing, adding magic-number verification and deep content inspection to close a MIME-spoofing gap.</li>
-            </ul>
-        </section>
+<h2>Additional Information</h2>
+<ul>
+<li>Languages: English – 8/10, Hindi – 8/10, Marathi – 10/10</li>
+<li>Tools: Microsoft Sentinel, Splunk, Chronicle, Burp Suite, Metasploit, BloodHound, LOLBAS, GTFOBins, Docker, Kubernetes, Git</li>
+</ul>
 
-        <section>
-            <h2 class="section-title">Education & Certifications</h2>
-
-            <div class="job-header">
-                <span class="job-title">Bachelor of Engineering in Computer Science & Data Science</span>
-                <span class="date">August 2019 – May 2023</span>
-            </div>
-            <div class="company" style="margin-bottom: 10px;">Sant Gadge Baba Amravati University | CGPA: 9.16</div>
-
-            <ul>
-                <li><strong>Certifications:</strong> <a href="https://0x0z0n.github.io/Portfolio/Cert/Digital_Forensics.png" target="_blank">Digital Forensics</a> (Uttarakhand Open University), Deep Learning (DeepLearning.AI).</li>
-                <li><strong>Advanced Security Training:</strong> Completed <a href="https://drive.google.com/file/d/1HFhcKJ5uvuaHyvRTTgnKsjLNZGAreesu/view?usp=drivesdk" target="_blank">T7 Cybersecurity Track</a> with Distinction; hands-on penetration testing simulations across Web, Mobile, DevSecOps, Network, Forensics, and Cloud Security.</li>
-                <li><strong>Global Competitions & Labs:</strong> Achieved <a href="https://app.hackthebox.com/public/users/1761906" target="_blank">"Pro Hacker" rank</a> on HackTheBox; ranked <strong>#30 globally</strong> in the <a href="https://www.cloudsecuritychampionship.com/certificate/cloudchampions/a60a8bea-ce0a-4979-9fd4-d724f310769e" target="_blank">Wiz Cloud Security Championship</a> CTF.</li>
-            </ul>
-        </section>
-
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <script>
-        new QRCode(document.getElementById("qr-canvas"), {
-            text: "https://0x0z0n.github.io/Portfolio/",
-            width: 78,
-            height: 78,
-            colorDark: "#1a1a1a",
-            colorLight: "#ffffff",
-            correctLevel: QRCode.CorrectLevel.M
-        });
-    </script>
-
+</div>
 </body>
 </html>
